@@ -155,9 +155,16 @@ export default function DGF() {
   const isTablet = w < 1024;
 
   const goTo = id => { setMenuOpen(false); document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); };
+  const getExitMultiple = (exit) => {
+    if (!exit || exit === "Realizada") return 0;
+    const num = parseFloat(exit.replace("~", "").replace(",", ".").replace("x", ""));
+    return isNaN(num) ? 0 : num;
+  };
   const filtered = filter === "all"
     ? companies.filter(c => c.highlight)
-    : companies.filter(c => c.type === filter);
+    : filter === "saida"
+      ? companies.filter(c => c.type === "saida").sort((a, b) => getExitMultiple(b.exit) - getExitMultiple(a.exit))
+      : companies.filter(c => c.type === filter);
   const othersCount = companies.filter(c => c.type === "ativo" && !c.highlight).length;
 
   return (
