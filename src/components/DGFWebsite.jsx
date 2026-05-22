@@ -190,10 +190,14 @@ export default function DGF() {
           display: "flex", alignItems: "center", justifyContent: "space-between",
           padding: isMobile ? "0 20px" : "0 40px",
           height: isMobile ? 60 : 68,
-          background: C.dark,
-          borderBottom: "1px solid rgba(255,255,255,0.08)",
-          boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.18)" : "none",
-          transition: "box-shadow 0.3s ease"
+          background: scrolled
+            ? "linear-gradient(180deg, rgba(10,31,21,0.78) 0%, rgba(10,31,21,0.62) 100%)"
+            : "linear-gradient(180deg, rgba(10,31,21,0.28) 0%, rgba(10,31,21,0.04) 100%)",
+          WebkitBackdropFilter: scrolled ? "blur(18px) saturate(160%)" : "blur(10px) saturate(130%)",
+          backdropFilter: scrolled ? "blur(18px) saturate(160%)" : "blur(10px) saturate(130%)",
+          borderBottom: scrolled ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(255,255,255,0.04)",
+          boxShadow: scrolled ? "0 8px 32px rgba(0,0,0,0.22)" : "none",
+          transition: "background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease"
         }}>
           <div onClick={() => goTo("home")} style={{ cursor: "pointer" }}>
             <Logo variant="white" height={isMobile ? 20 : 24} />
