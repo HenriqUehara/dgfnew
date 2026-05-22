@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import DGFWebsite from "@/components/DGFWebsite.jsx";
+import DGFWebsite from "@/components/DGFWebsite";
 
 export const Route = createFileRoute("/")({
   head: () => ({
