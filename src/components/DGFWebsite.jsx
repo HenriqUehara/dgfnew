@@ -230,7 +230,7 @@ export default function DGF() {
 
         {/* MOBILE MENU */}
         {isMobile && menuOpen && (
-          <div style={{ position: "fixed", top: 60, left: 0, right: 0, zIndex: 99, background: C.dark, borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "20px", display: "flex", flexDirection: "column", gap: 4, boxShadow: "0 8px 32px rgba(0,0,0,0.2)" }}>
+          <div style={{ position: "fixed", top: 60, left: 0, right: 0, zIndex: 99, background: "rgba(10,31,21,0.88)", WebkitBackdropFilter: "blur(18px) saturate(160%)", backdropFilter: "blur(18px) saturate(160%)", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "20px", display: "flex", flexDirection: "column", gap: 4, boxShadow: "0 8px 32px rgba(0,0,0,0.2)" }}>
             {[["sobre","Sobre"],["tese","Tese"],["portfolio","Portfólio"],["track","Track Record"],["time","Time"]].map(([id, label]) => (
               <span key={id} onClick={() => goTo(id)} style={{ fontSize: 16, fontWeight: 500, color: "white", cursor: "pointer", padding: "14px 4px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>{label}</span>
             ))}
