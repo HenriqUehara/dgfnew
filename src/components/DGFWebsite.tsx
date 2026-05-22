@@ -595,7 +595,7 @@ export default function DGF() {
                   <span style={{ fontWeight: 600, color: C.textSoft }}>Investimentos:</span> total realizado dos fundos DGF Legacy ao DGF 7.
                 </p>
                 <p style={{ marginBottom: 6 }}>
-                  <span style={{ fontWeight: 600, color: C.textSoft }}>Realizações:</span> investimentos com saída realizada nos fundos DGF Legacy ao DGF 7.
+                  <span style={{ fontWeight: 600, color: C.textSoft }}>Realizados:</span> investimentos com saída realizada nos fundos DGF Legacy ao DGF 7.
                 </p>
                 <p style={{ marginBottom: 0 }}>
                   <span style={{ fontWeight: 600, color: C.textSoft }}>MOIC e IRR:</span> realizações em companhias de tecnologia. Exclui seis companhias não-tech. Soma dos proventos e recebíveis dividida pelo capital investido nas companhias realizadas.
