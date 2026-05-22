@@ -105,8 +105,7 @@ const companies = [
 // Métricas consolidadas do slide "+25 Years of Consistence and Discipline"
 const trackStats = [
   { value: "65", suffix: "", label: "Investimentos", note: "Total de investimentos dos fundos DGF Legacy ao DGF 7", variant: "dark" },
-  { value: "41", suffix: "", label: "Realizações", note: "Investimentos realizados dos fundos DGF Legacy ao DGF 7", variant: "dark" },
-  { value: "+1", suffix: "B", label: "BRL realizado", note: "Em proventos e recebíveis acumulados", variant: "dark" },
+  { value: "41", suffix: "", label: "Realizados", note: "Investimentos realizados dos fundos DGF Legacy ao DGF 7", variant: "dark" },
   { value: "4,7", suffix: "x", label: "MOIC", note: "Multiple on Invested Capital nas empresas realizadas", variant: "light" },
   { value: "30,6", suffix: "%", label: "IRR", note: "Taxa interna de retorno nas empresas de tecnologia realizadas", variant: "light" },
 ];
@@ -321,11 +320,11 @@ export default function DGF() {
             borderTop: "1px solid rgba(255,255,255,0.08)",
             paddingTop: isMobile ? 28 : 44
           }}>
-            {[["25+","Anos de operação"],["67","Investimentos"],["42","Saídas"],["US$40M","Em deploy"]].map(([n, l], i) => (
+            {[["25+","Anos de operação"],["67","Investimentos"],["42","Saídas"]].map(([n, l], i) => (
               <div key={l} style={{
                 padding: isMobile ? "18px 14px" : "0 28px 0 0",
-                borderRight: !isMobile && i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none",
-                borderBottom: isMobile && i < 2 ? "1px solid rgba(255,255,255,0.06)" : "none"
+                borderRight: !isMobile && i < 2 ? "1px solid rgba(255,255,255,0.08)" : "none",
+                borderBottom: isMobile && i < 1 ? "1px solid rgba(255,255,255,0.06)" : "none"
               }}>
                 <div style={{ fontSize: isMobile ? 24 : "clamp(26px, 2.6vw, 38px)", fontWeight: 600, color: "white", letterSpacing: "-0.02em", lineHeight: 1, marginBottom: 6 }}>{n}</div>
                 <div style={{ fontSize: 11.5, color: "rgba(255,255,255,0.4)", letterSpacing: "0.04em" }}>{l}</div>
@@ -348,7 +347,7 @@ export default function DGF() {
                 <span className="serif" style={{ color: C.green }}>Orientada ao fundador.</span>
               </h2>
               <p style={{ fontSize: 15.5, color: C.textSoft, lineHeight: 1.75, marginBottom: 18 }}>
-                Fundada em 2001 por <strong style={{ color: C.dark, fontWeight: 600 }}>Sidney Chameh</strong> a partir do investimento na Logocenter, que originou a <strong style={{ color: C.dark, fontWeight: 600 }}>TOTVS</strong>, atravessamos ciclos econômicos, mudanças de mercado e evoluções de modelo.
+                Fundada em 2001 por <strong style={{ color: C.dark, fontWeight: 600 }}>Sidney Chameh</strong>, atravessamos ciclos econômicos, mudanças de mercado e evoluções de modelo.
               </p>
               <p style={{ fontSize: 15.5, color: C.textSoft, lineHeight: 1.75 }}>
                 Desde 2012, nossa tese é exclusivamente <strong style={{ color: C.dark, fontWeight: 600 }}>software B2B e modelos capital eficiente</strong>. É onde nosso conhecimento gera valor real para fundadores que constroem empresas duradouras.
@@ -632,8 +631,8 @@ export default function DGF() {
                 { ini: "HU", name: "Henrique Uehara", role: "Partner", li: "https://www.linkedin.com/in/henriqueuehara" },
                 { ini: "HF", name: "Henrique Ferreira", role: "Partner", li: "https://www.linkedin.com/in/henrique-f-ferreira-969364114" },
                 { ini: "DB", name: "Dario Boralli", role: "Senior Advisor", li: "https://br.linkedin.com/in/dario-boralli-30a84136" },
-                { ini: "DM", name: "Daniel Menache", role: "Partner", li: "https://www.linkedin.com/in/daniel-menache" },
-                { ini: "JO", name: "João Orem", role: "Partner", li: "https://www.linkedin.com/in/joao-orem" },
+                { ini: "DM", name: "Daniel Menache", role: "Partner", li: "https://www.linkedin.com/in/daniel-menache-55402a1b5/" },
+                { ini: "JO", name: "João Orem", role: "Partner", li: "https://www.linkedin.com/in/jo%C3%A3o-gabriel-coser-de-orem-2a152a15b/" },
                 { ini: "LG", name: "Lucas Gouveia", role: "Compliance Director", li: "https://www.linkedin.com/in/lucas-gouveia-branco-6795311b9" },
                 { ini: "MM", name: "Marcelo Merichello", role: "Analyst", li: "https://br.linkedin.com/in/marcelomerichello" },
                 { ini: "LP", name: "Base de LPs e ex-empreendedores", role: "Rede DGF", bio: "Fundos institucionais, family offices e ex-fundadores de tech que compõem nossa rede de suporte e abrem portas para as investidas." },
@@ -712,7 +711,7 @@ export default function DGF() {
             <Logo variant="white" height={20} />
           </div>
           <div style={{ fontSize: 11.5, color: "rgba(255,255,255,0.28)", flex: isMobile ? "1 1 100%" : "0 1 auto", textAlign: isMobile ? "left" : "center" }}>
-            © 2025 DGF Investimentos · São Paulo · Dados confidenciais
+            © 2025 DGF Investimentos · São Paulo
           </div>
           <div style={{ display: "flex", gap: 22, flexWrap: "wrap" }}>
             {[["sobre","Sobre"],["portfolio","Portfólio"],["contato","Contato"]].map(([id, l]) => (
