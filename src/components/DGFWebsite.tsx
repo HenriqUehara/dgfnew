@@ -92,7 +92,7 @@ const companies = [
   { id: 50, ini: "IT", name: "Intellibrand", desc: "Monitoramento e inteligência de marca digital", type: "saida", exit: "Realizada" },
   { id: 51, ini: "CO", name: "Concil", desc: "Conciliação financeira automatizada", type: "saida", exit: "Realizada" },
   { id: 52, ini: "AD", name: "ADTsys", desc: "Consultoria e serviços em cloud", type: "saida", exit: "Realizada" },
-  { id: 53, ini: "IG", name: "Ingresse", desc: "Plataforma de vendas de ingressos para eventos", type: "saida", exit: "Realizada" },
+  { id: 53, ini: "IG", name: "Ingresse", desc: "Plataforma de vendas de ingressos para eventos", type: "saida", exit: "Realizada", highlight: true },
   { id: 54, ini: "GF", name: "Geofusion", desc: "Inteligência geográfica para varejo e expansão", type: "saida", exit: "Realizada" },
   { id: 55, ini: "WR", name: "Webradar", desc: "Monitoramento e analytics para telecomunicações", type: "saida", exit: "Realizada" },
   { id: 56, ini: "RA", name: "Reclame Aqui", desc: "Plataforma de reputação e relacionamento com o consumidor", type: "saida", exit: "4,6x", highlight: true },
