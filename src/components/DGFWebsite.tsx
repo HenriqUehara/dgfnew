@@ -277,12 +277,17 @@ export default function DGF() {
           </div>
 
           <h1 style={{
-            fontSize: isMobile ? "42px" : "clamp(56px, 8vw, 104px)",
-            fontWeight: 600, lineHeight: 0.96,
+            fontSize: isMobile ? "40px" : "clamp(54px, 7.4vw, 96px)",
+            fontWeight: 600, lineHeight: 1.02,
             color: "white", letterSpacing: "-0.035em",
-            maxWidth: 1000, marginBottom: 28
+            maxWidth: 1040, marginBottom: 28
           }}>
-            Construímos companhias resilientes aos ciclos de mercado.
+            Construímos companhias{" "}
+            <span className="serif" style={{ fontWeight: 400, fontStyle: "italic", color: "rgba(255,255,255,0.95)" }}>
+              resilientes
+            </span>
+            <br />
+            aos ciclos de mercado.
           </h1>
 
           <p style={{
