@@ -282,10 +282,7 @@ export default function DGF() {
             color: "white", letterSpacing: "-0.035em",
             maxWidth: 1000, marginBottom: 28
           }}>
-            Fundos passam.<br />
-            <span className="serif" style={{ color: C.greenAccent, fontWeight: 400, letterSpacing: "-0.02em" }}>
-              Firmas permanecem.
-            </span>
+            Construímos companhias resilientes aos ciclos de mercado.
           </h1>
 
           <p style={{
