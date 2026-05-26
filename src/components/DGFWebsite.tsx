@@ -704,21 +704,22 @@ export default function DGF() {
 
         {/* FOOTER */}
         <footer style={{
-          background: "#06120c", padding: isMobile ? "36px 20px" : "48px 6vw",
-          display: "flex", justifyContent: "space-between", alignItems: "center",
-          flexWrap: "wrap", gap: 20
+          background: "#06120c", padding: isMobile ? "44px 20px" : "56px 6vw",
+          display: "flex", flexDirection: "column", alignItems: "center",
+          gap: 24, textAlign: "center"
         }}>
-          <div style={{ opacity: 0.55 }}>
-            <Logo variant="white" height={20} />
+          <div style={{ opacity: 0.65 }}>
+            <Logo variant="white" height={22} />
           </div>
-          <div style={{ fontSize: 11.5, color: "rgba(255,255,255,0.28)", flex: isMobile ? "1 1 100%" : "0 1 auto", textAlign: isMobile ? "left" : "center" }}>
-            © 2025 DGF Investimentos · São Paulo
-          </div>
-          <div style={{ display: "flex", gap: 22, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 28, flexWrap: "wrap", justifyContent: "center" }}>
             {[["sobre","Sobre"],["portfolio","Portfólio"],["contato","Contato"]].map(([id, l]) => (
-              <span key={id} className="footer-l" onClick={() => goTo(id)} style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", cursor: "pointer", transition: "color 0.2s" }}>{l}</span>
+              <span key={id} className="footer-l" onClick={() => goTo(id)} style={{ fontSize: 12, color: "rgba(255,255,255,0.45)", cursor: "pointer", transition: "color 0.2s", letterSpacing: "0.02em" }}>{l}</span>
             ))}
-            <a href="https://www.linkedin.com/company/dgf-investimentos" target="_blank" rel="noreferrer" className="footer-l" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none", transition: "color 0.2s" }}>LinkedIn</a>
+            <a href="https://www.linkedin.com/company/dgf-investimentos" target="_blank" rel="noreferrer" className="footer-l" style={{ fontSize: 12, color: "rgba(255,255,255,0.45)", textDecoration: "none", transition: "color 0.2s", letterSpacing: "0.02em" }}>LinkedIn</a>
+          </div>
+          <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.1)" }} />
+          <div style={{ fontSize: 11.5, color: "rgba(255,255,255,0.3)", letterSpacing: "0.02em" }}>
+            © 2025 DGF Investimentos · São Paulo
           </div>
         </footer>
 
