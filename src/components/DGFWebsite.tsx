@@ -92,7 +92,7 @@ const companies = [
   { id: 50, ini: "IT", name: "Intellibrand", desc: "Monitoramento e inteligência de marca digital", type: "saida", exit: "Realizada" },
   { id: 51, ini: "CO", name: "Concil", desc: "Conciliação financeira automatizada", type: "saida", exit: "Realizada" },
   { id: 52, ini: "AD", name: "ADTsys", desc: "Consultoria e serviços em cloud", type: "saida", exit: "Realizada" },
-  { id: 53, ini: "IG", name: "Ingresse", desc: "Plataforma de vendas de ingressos para eventos", type: "saida", exit: "Realizada" },
+  { id: 53, ini: "IG", name: "Ingresse", desc: "Plataforma de vendas de ingressos para eventos", type: "saida", exit: "Realizada", highlight: true },
   { id: 54, ini: "GF", name: "Geofusion", desc: "Inteligência geográfica para varejo e expansão", type: "saida", exit: "Realizada" },
   { id: 55, ini: "WR", name: "Webradar", desc: "Monitoramento e analytics para telecomunicações", type: "saida", exit: "Realizada" },
   { id: 56, ini: "RA", name: "Reclame Aqui", desc: "Plataforma de reputação e relacionamento com o consumidor", type: "saida", exit: "4,6x", highlight: true },
@@ -313,22 +313,27 @@ export default function DGF() {
 
           {/* HERO STATS */}
           <div style={{
-            marginTop: isMobile ? 56 : 88,
+            marginTop: isMobile ? 56 : 96,
             display: "grid",
-            gridTemplateColumns: isMobile ? "1fr 1fr 1fr" : "repeat(3, 1fr)",
+            gridTemplateColumns: "repeat(3, 1fr)",
             gap: 0,
             borderTop: "1px solid rgba(255,255,255,0.08)",
-            paddingTop: isMobile ? 28 : 44,
-            maxWidth: 720
+            borderBottom: "1px solid rgba(255,255,255,0.08)",
+            paddingTop: isMobile ? 32 : 48,
+            paddingBottom: isMobile ? 32 : 48,
+            maxWidth: 760,
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: "100%"
           }}>
             {[["25+","Anos de operação"],["67","Investimentos"],["42","Saídas"]].map(([n, l], i) => (
               <div key={l} style={{
-                padding: isMobile ? "8px 10px" : "0 28px",
+                padding: isMobile ? "0 8px" : "0 28px",
                 borderRight: i < 2 ? "1px solid rgba(255,255,255,0.08)" : "none",
-                textAlign: "left"
+                textAlign: "center"
               }}>
-                <div style={{ fontSize: isMobile ? 24 : "clamp(26px, 2.6vw, 38px)", fontWeight: 600, color: "white", letterSpacing: "-0.02em", lineHeight: 1, marginBottom: 6 }}>{n}</div>
-                <div style={{ fontSize: 11.5, color: "rgba(255,255,255,0.4)", letterSpacing: "0.04em" }}>{l}</div>
+                <div style={{ fontSize: isMobile ? 28 : "clamp(30px, 3vw, 44px)", fontWeight: 500, color: "white", letterSpacing: "-0.02em", lineHeight: 1, marginBottom: 10 }}>{n}</div>
+                <div style={{ fontSize: 11.5, color: "rgba(255,255,255,0.42)", letterSpacing: "0.08em", textTransform: "uppercase" }}>{l}</div>
               </div>
             ))}
           </div>
