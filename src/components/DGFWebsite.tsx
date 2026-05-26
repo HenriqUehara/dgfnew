@@ -315,16 +315,17 @@ export default function DGF() {
           <div style={{
             marginTop: isMobile ? 56 : 88,
             display: "grid",
-            gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)",
+            gridTemplateColumns: isMobile ? "1fr 1fr 1fr" : "repeat(3, 1fr)",
             gap: 0,
             borderTop: "1px solid rgba(255,255,255,0.08)",
-            paddingTop: isMobile ? 28 : 44
+            paddingTop: isMobile ? 28 : 44,
+            maxWidth: 720
           }}>
             {[["25+","Anos de operação"],["67","Investimentos"],["42","Saídas"]].map(([n, l], i) => (
               <div key={l} style={{
-                padding: isMobile ? "18px 14px" : "0 28px 0 0",
-                borderRight: !isMobile && i < 2 ? "1px solid rgba(255,255,255,0.08)" : "none",
-                borderBottom: isMobile && i < 1 ? "1px solid rgba(255,255,255,0.06)" : "none"
+                padding: isMobile ? "8px 10px" : "0 28px",
+                borderRight: i < 2 ? "1px solid rgba(255,255,255,0.08)" : "none",
+                textAlign: "left"
               }}>
                 <div style={{ fontSize: isMobile ? 24 : "clamp(26px, 2.6vw, 38px)", fontWeight: 600, color: "white", letterSpacing: "-0.02em", lineHeight: 1, marginBottom: 6 }}>{n}</div>
                 <div style={{ fontSize: 11.5, color: "rgba(255,255,255,0.4)", letterSpacing: "0.04em" }}>{l}</div>
