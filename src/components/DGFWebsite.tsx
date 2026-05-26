@@ -539,7 +539,7 @@ export default function DGF() {
             <Fade delay={100}>
               <div style={{
                 display: "grid",
-                gridTemplateColumns: isMobile ? "1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(5, 1fr)",
+                gridTemplateColumns: isMobile ? "1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(4, 1fr)",
                 gap: 12
               }}>
                 {trackStats.map((s, i) => {
