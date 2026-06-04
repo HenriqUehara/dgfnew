@@ -408,7 +408,7 @@ export default function DGF() {
                 <span className="serif" style={{ color: C.green }}>Orientada ao fundador.</span>
               </h2>
               <p style={{ fontSize: 15.5, color: C.textSoft, lineHeight: 1.75, marginBottom: 18 }}>
-                Fundada em 2001 por <strong style={{ color: C.dark, fontWeight: 600 }}>Sidney Chameh</strong>, atravessamos ciclos econômicos, mudanças de mercado e evoluções de modelo.
+                Fundado em 2001 por <strong style={{ color: C.dark, fontWeight: 600 }}>Sidney Chameh</strong>, atravessamos ciclos econômicos, mudanças de mercado e evoluções de modelo.
               </p>
               <p style={{ fontSize: 15.5, color: C.textSoft, lineHeight: 1.75 }}>
                 Desde 2012, nossa tese é exclusivamente <strong style={{ color: C.dark, fontWeight: 600 }}>software B2B e modelos capital eficiente</strong>. É onde nosso conhecimento gera valor real para fundadores que constroem empresas duradouras.
