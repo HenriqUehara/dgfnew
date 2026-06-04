@@ -349,6 +349,51 @@ export default function DGF() {
           </div>
         </section>
 
+        {/* VÍDEO INSTITUCIONAL */}
+        <section id="video" style={{
+          background: C.dark,
+          padding: isMobile ? "72px 20px" : "120px 6vw",
+          position: "relative",
+          overflow: "hidden"
+        }}>
+          <div style={{ position: "absolute", top: -120, left: "50%", transform: "translateX(-50%)", width: isMobile ? 400 : 700, height: isMobile ? 200 : 350, background: `radial-gradient(ellipse, ${C.green} 0%, transparent 70%)`, opacity: 0.15, filter: "blur(60px)", pointerEvents: "none" }} />
+          <div style={{ maxWidth: 960, margin: "0 auto", position: "relative" }}>
+            <div style={{ textAlign: "center", marginBottom: isMobile ? 36 : 48 }}>
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: C.greenAccent, marginBottom: 18 }}>Vídeo Institucional</div>
+              <h2 style={{ fontSize: isMobile ? "32px" : "clamp(34px, 4vw, 52px)", fontWeight: 500, letterSpacing: "-0.03em", color: "white", lineHeight: 1.05, marginBottom: 14 }}>
+                <span className="serif" style={{ color: C.greenAccent }}>Nossa</span> história
+              </h2>
+              <p style={{ fontSize: 15.5, color: "rgba(255,255,255,0.45)", maxWidth: 460, margin: "0 auto", lineHeight: 1.6 }}>
+                Conheça a DGF, nossa trajetória e como construímos companhias resilientes há mais de 25 anos.
+              </p>
+            </div>
+            <div style={{
+              position: "relative",
+              paddingBottom: "56.25%",
+              height: 0,
+              borderRadius: 20,
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.08)",
+              boxShadow: "0 20px 60px rgba(0,0,0,0.35)"
+            }}>
+              <iframe
+                src="https://www.youtube.com/embed/2CuFcuRLIrE"
+                title="Vídeo Institucional DGF"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  border: "none"
+                }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </section>
+
         {/* SOBRE */}
         <section id="sobre" style={{ background: "white", padding: isMobile ? "72px 20px" : "120px 6vw" }}>
           <div style={{
