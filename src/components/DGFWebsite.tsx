@@ -542,11 +542,8 @@ export default function DGF() {
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: 4 }}>
                       <span style={{ fontSize: 11, fontWeight: 500, color: c.type === "ativo" ? C.greenAccent : "rgba(255,255,255,0.4)", letterSpacing: "0.05em", textTransform: "uppercase" }}>{c.type === "ativo" ? "Ativo" : "Saída"}</span>
-                      {c.exit && (c.highlight && c.type === "saida" && c.exit !== "Realizada"
-                        ? <span style={{ fontSize: 11.5, fontWeight: 600, color: "white", padding: "4px 11px", background: C.green, borderRadius: 100, letterSpacing: "0.02em" }}>{c.exit}</span>
-                        : c.exit === "Realizada"
-                          ? <span style={{ fontSize: 10.5, fontWeight: 500, color: "rgba(255,255,255,0.5)", padding: "3px 10px", background: "rgba(255,255,255,0.04)", borderRadius: 100, letterSpacing: "0.04em", textTransform: "uppercase" }}>{c.exit}</span>
-                          : <span style={{ fontSize: 11, fontWeight: 500, color: C.greenAccent, padding: "3px 10px", background: "rgba(60,171,110,0.15)", borderRadius: 100 }}>{c.exit}</span>
+                      {c.exit === "Realizada" && (
+                        <span style={{ fontSize: 10.5, fontWeight: 500, color: "rgba(255,255,255,0.5)", padding: "3px 10px", background: "rgba(255,255,255,0.04)", borderRadius: 100, letterSpacing: "0.04em", textTransform: "uppercase" }}>{c.exit}</span>
                       )}
                     </div>
                   </div>
