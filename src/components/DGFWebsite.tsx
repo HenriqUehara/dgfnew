@@ -364,7 +364,7 @@ export default function DGF() {
                 <span className="serif" style={{ color: C.greenAccent }}>Nossa</span> história
               </h2>
               <p style={{ fontSize: 15.5, color: "rgba(255,255,255,0.45)", maxWidth: 460, margin: "0 auto", lineHeight: 1.6 }}>
-                Conheça a DGF, nossa trajetória e como construímos companhias resilientes há mais de 25 anos.
+                Conheça o DGF, nossa trajetória e como construímos companhias resilientes há mais de 25 anos.
               </p>
             </div>
             <div style={{
