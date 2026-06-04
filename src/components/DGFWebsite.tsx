@@ -116,7 +116,7 @@ const thesis = [
   { n: "03", title: "Unit Economics Sólidos", body: "Crescimento sustentável com CAC/LTV que resistem a análise rigorosa." },
   { n: "04", title: "Times Técnicos", body: "Fundadores que entendem o problema. Produto e engenharia como vantagem competitiva." },
   { n: "05", title: "Potencial Global", body: "Brasil como ponto de partida, não como teto. Competir internacionalmente desde cedo." },
-  { n: "06", title: "Disciplina de Valuation", body: "Consenso do Comitê. Tickets de US$1M–US$3M. Participações de 10–25% com assento no conselho." },
+  { n: "06", title: "Processo de Análise Criterioso", body: "Metodologia e critério de análise proprietário, sempre em busca de consenso do Comitê de Investimentos. Liderando rodadas com tickets de US$1M – US$3M e assento no conselho." },
 ];
 
 function useFade() {
