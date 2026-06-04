@@ -402,7 +402,7 @@ export default function DGF() {
             gap: isMobile ? 40 : 80, alignItems: "center", maxWidth: 1280, margin: "0 auto"
           }}>
             <Fade>
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: C.green, marginBottom: 18 }}>Sobre a Firma</div>
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: C.green, marginBottom: 18 }}>Sobre a Gestora</div>
               <h2 style={{ fontSize: isMobile ? "32px" : "clamp(34px, 4vw, 52px)", fontWeight: 500, letterSpacing: "-0.03em", color: C.dark, lineHeight: 1.05, marginBottom: 24 }}>
                 Construída para durar.<br />
                 <span className="serif" style={{ color: C.green }}>Orientada ao fundador.</span>
