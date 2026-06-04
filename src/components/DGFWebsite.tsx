@@ -116,7 +116,7 @@ const thesis = [
   { n: "03", title: "Unit Economics Sólidos", body: "Crescimento sustentável com CAC/LTV que resistem a análise rigorosa." },
   { n: "04", title: "Times Técnicos", body: "Fundadores que entendem o problema. Produto e engenharia como vantagem competitiva." },
   { n: "05", title: "Potencial Global", body: "Brasil como ponto de partida, não como teto. Competir internacionalmente desde cedo." },
-  { n: "06", title: "Disciplina de Valuation", body: "Consenso do Comitê. Tickets de US$1M–US$3M. Participações de 10–25% com assento no conselho." },
+  { n: "06", title: "Processo de Análise Criterioso", body: "Metodologia e critério de análise proprietário, sempre em busca de consenso do Comitê de Investimentos. Liderando rodadas com tickets de US$1M – US$3M e assento no conselho." },
 ];
 
 function useFade() {
@@ -364,7 +364,7 @@ export default function DGF() {
                 <span className="serif" style={{ color: C.greenAccent }}>Nossa</span> história
               </h2>
               <p style={{ fontSize: 15.5, color: "rgba(255,255,255,0.45)", maxWidth: 460, margin: "0 auto", lineHeight: 1.6 }}>
-                Conheça a DGF, nossa trajetória e como construímos companhias resilientes há mais de 25 anos.
+                Conheça o DGF, nossa trajetória e como construímos companhias resilientes há mais de 25 anos.
               </p>
             </div>
             <div style={{
@@ -402,13 +402,13 @@ export default function DGF() {
             gap: isMobile ? 40 : 80, alignItems: "center", maxWidth: 1280, margin: "0 auto"
           }}>
             <Fade>
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: C.green, marginBottom: 18 }}>Sobre a Firma</div>
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: C.green, marginBottom: 18 }}>Sobre a Gestora</div>
               <h2 style={{ fontSize: isMobile ? "32px" : "clamp(34px, 4vw, 52px)", fontWeight: 500, letterSpacing: "-0.03em", color: C.dark, lineHeight: 1.05, marginBottom: 24 }}>
                 Construída para durar.<br />
                 <span className="serif" style={{ color: C.green }}>Orientada ao fundador.</span>
               </h2>
               <p style={{ fontSize: 15.5, color: C.textSoft, lineHeight: 1.75, marginBottom: 18 }}>
-                Fundada em 2001 por <strong style={{ color: C.dark, fontWeight: 600 }}>Sidney Chameh</strong>, atravessamos ciclos econômicos, mudanças de mercado e evoluções de modelo.
+                Fundado em 2001 por <strong style={{ color: C.dark, fontWeight: 600 }}>Sidney Chameh</strong>, atravessamos ciclos econômicos, mudanças de mercado e evoluções de modelo.
               </p>
               <p style={{ fontSize: 15.5, color: C.textSoft, lineHeight: 1.75 }}>
                 Desde 2012, nossa tese é exclusivamente <strong style={{ color: C.dark, fontWeight: 600 }}>software B2B e modelos capital eficiente</strong>. É onde nosso conhecimento gera valor real para fundadores que constroem empresas duradouras.
@@ -542,11 +542,8 @@ export default function DGF() {
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: 4 }}>
                       <span style={{ fontSize: 11, fontWeight: 500, color: c.type === "ativo" ? C.greenAccent : "rgba(255,255,255,0.4)", letterSpacing: "0.05em", textTransform: "uppercase" }}>{c.type === "ativo" ? "Ativo" : "Saída"}</span>
-                      {c.exit && (c.highlight && c.type === "saida" && c.exit !== "Realizada"
-                        ? <span style={{ fontSize: 11.5, fontWeight: 600, color: "white", padding: "4px 11px", background: C.green, borderRadius: 100, letterSpacing: "0.02em" }}>{c.exit}</span>
-                        : c.exit === "Realizada"
-                          ? <span style={{ fontSize: 10.5, fontWeight: 500, color: "rgba(255,255,255,0.5)", padding: "3px 10px", background: "rgba(255,255,255,0.04)", borderRadius: 100, letterSpacing: "0.04em", textTransform: "uppercase" }}>{c.exit}</span>
-                          : <span style={{ fontSize: 11, fontWeight: 500, color: C.greenAccent, padding: "3px 10px", background: "rgba(60,171,110,0.15)", borderRadius: 100 }}>{c.exit}</span>
+                      {c.exit === "Realizada" && (
+                        <span style={{ fontSize: 10.5, fontWeight: 500, color: "rgba(255,255,255,0.5)", padding: "3px 10px", background: "rgba(255,255,255,0.04)", borderRadius: 100, letterSpacing: "0.04em", textTransform: "uppercase" }}>{c.exit}</span>
                       )}
                     </div>
                   </div>
