@@ -282,12 +282,20 @@ export default function DGF() {
             color: "white", letterSpacing: "-0.035em",
             maxWidth: 1040, marginBottom: 28
           }}>
-            Construímos companhias{" "}
-            <span className="serif" style={{ fontWeight: 400, fontStyle: "italic", color: "rgba(255,255,255,0.95)" }}>
-              resilientes
-            </span>
+            <span style={{ color: "rgba(255,255,255,0.55)", fontWeight: 300 }}>Construímos</span>{" "}
+            <span style={{ color: "white" }}>companhias</span>
             <br />
-            aos ciclos de mercado.
+            <span className="serif" style={{
+              fontWeight: 400, fontStyle: "italic",
+              background: `linear-gradient(105deg, ${C.greenAccent} 0%, #8FE3B4 55%, #ffffff 100%)`,
+              WebkitBackgroundClip: "text", backgroundClip: "text",
+              WebkitTextFillColor: "transparent", color: "transparent",
+              paddingRight: "0.08em"
+            }}>resilientes</span>{" "}
+            <span style={{ color: "rgba(255,255,255,0.55)", fontWeight: 300 }}>aos</span>{" "}
+            <span style={{ color: "white" }}>ciclos</span>{" "}
+            <span style={{ color: "rgba(255,255,255,0.55)", fontWeight: 300 }}>de</span>{" "}
+            <span style={{ color: "white" }}>mercado.</span>
           </h1>
 
           <p style={{
