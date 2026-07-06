@@ -177,6 +177,7 @@ a.dgf-teamcard:hover .dgf-teamcard__li { opacity: 1; }
 .dgf-footer__copy { font-size: 11.5px; color: rgba(255,255,255,0.4); letter-spacing: 0.02em; }
 .dgf-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
 .dgf-reveal.is-visible { opacity: 1; transform: none; }
+.dgf-cards { display: grid; grid-template-columns: 1fr; gap: 14px; }
 @media (min-width: 768px) {
   .dgf-nav { height: 68px; padding: 0 40px; }
   .dgf-nav__links, .dgf-nav__cta { display: flex; }
