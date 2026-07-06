@@ -200,7 +200,6 @@ a.dgf-teamcard:hover .dgf-teamcard__li { opacity: 1; }
   .dgf-cards { grid-template-columns: repeat(3, 1fr); }
   .dgf-exits { grid-template-columns: repeat(4, 1fr); }
 }
-.dgf-cards { display: grid; grid-template-columns: 1fr; gap: 14px; }
 @media (prefers-reduced-motion: reduce) {
   .dgf-root *, .dgf-root *::before, .dgf-root *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
   .dgf-reveal { opacity: 1 !important; transform: none !important; }
