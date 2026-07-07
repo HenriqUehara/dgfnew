@@ -12,7 +12,6 @@ import {
   companies,
   heroStats,
   navLinks,
-  notableExits,
   team,
   thesis,
   trackStats,
@@ -374,35 +373,28 @@ export default function DGFWebsite() {
             <Reveal>
               <p className="dgf-eyebrow">Track Record</p>
               <h2 className="dgf-h2">+25 anos de consistência<br />e <span className="serif" style={{ color: "var(--green)" }}>disciplina</span>.</h2>
-              <p className="dgf-lead" style={{ marginBottom: 48 }}>Atravessamos ciclos com o mesmo critério. Algumas das saídas que marcaram a trajetória do DGF:</p>
+              <p className="dgf-lead" style={{ marginBottom: 48 }}>Entregando retornos de top-quartile ao longo dos ciclos.</p>
             </Reveal>
-            <div className="dgf-exits">
-              {notableExits.map((e, i) => (
-                <Reveal key={e.name} delay={i * 60}>
-                  <article className="dgf-exitcard">
-                    <div className="dgf-exitcard__top">
-                      <span className="dgf-exitcard__name">{e.name}</span>
-                      {e.multiple && <span className="dgf-exitcard__mult">{e.multiple}</span>}
-                    </div>
-                    <p className="dgf-exitcard__desc">{e.desc}</p>
-                  </article>
-                </Reveal>
-              ))}
-            </div>
-            <Reveal delay={120}>
-              <div className="dgf-track__strip">
+            <Reveal delay={100}>
+              <div className="dgf-trackgrid">
                 {trackStats.map((s) => (
-                  <div className="dgf-track__cell" key={s.label}>
-                    <div className="dgf-track__num">{s.value}{s.suffix && <span className="suffix">{s.suffix}</span>}</div>
-                    <div className="dgf-track__label">{s.label}</div>
+                  <div key={s.label} className={`dgf-trackcard dgf-trackcard--${s.variant ?? "dark"}`}>
+                    <div className="dgf-trackcard__blob" aria-hidden="true" />
+                    <div className="dgf-trackcard__label">{s.label}</div>
+                    <div className="dgf-trackcard__value">
+                      <span className="dgf-trackcard__num">{s.value}</span>
+                      {s.suffix && <span className="dgf-trackcard__suffix">{s.suffix}</span>}
+                    </div>
                   </div>
                 ))}
               </div>
             </Reveal>
-            <Reveal delay={180}>
-              <p className="dgf-note">
-                <strong style={{ color: "var(--text-soft)" }}>Notas:</strong> números consolidados dos fundos DGF Legacy ao DGF 8. Múltiplos de saída referem-se a operações já divulgadas publicamente (RD Station adquirida pela TOTVS; Logocenter deu origem à TOTVS). Retornos passados não garantem resultados futuros.
-              </p>
+            <Reveal delay={200}>
+              <div className="dgf-note">
+                <p style={{ marginBottom: 6 }}><strong style={{ color: "var(--text-soft)" }}>Investimentos:</strong> total dos fundos DGF Legacy ao DGF 7.</p>
+                <p style={{ marginBottom: 6 }}><strong style={{ color: "var(--text-soft)" }}>Realizados:</strong> investimentos com saída realizada nos fundos DGF Legacy ao DGF 7.</p>
+                <p style={{ marginBottom: 0 }}><strong style={{ color: "var(--text-soft)" }}>MOIC e IRR:</strong> realizações em companhias de tecnologia. Exclui seis companhias não-tech. Soma dos proventos e recebíveis dividida pelo capital investido nas companhias realizadas.</p>
+              </div>
             </Reveal>
           </div>
         </section>
