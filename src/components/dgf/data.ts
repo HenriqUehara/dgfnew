@@ -85,25 +85,22 @@ export const thesis: Thesis[] = [
   { n: "06", title: "Processo Criterioso", body: "Metodologia proprietária em busca de consenso do Comitê. Lideramos rodadas de US$ 1M–US$ 3M com assento no conselho." },
 ];
 
-export interface NotableExit { name: string; desc: string; multiple?: string; }
-export const notableExits: NotableExit[] = [
-  { name: "RD Station", desc: "Marketing digital · adquirida pela TOTVS", multiple: "~34x" },
-  { name: "Daitan", desc: "Engenharia de software · saída estratégica", multiple: "~67x" },
-  { name: "Mosyle", desc: "Gestão de dispositivos Apple", multiple: "~16,6x" },
-  { name: "Logocenter", desc: "ERP que deu origem à TOTVS", multiple: undefined },
-];
-
-export interface Stat { value: string; suffix?: string; label: string; }
+export interface Stat {
+  value: string;
+  suffix?: string;
+  label: string;
+  variant?: "dark" | "light";
+}
 export const heroStats: Stat[] = [
   { value: "25", suffix: "+", label: "Anos de operação" },
   { value: "67", label: "Investimentos" },
   { value: "42", label: "Saídas" },
 ];
 export const trackStats: Stat[] = [
-  { value: "8", label: "Fundos desde 2001" },
-  { value: "67", label: "Investimentos" },
-  { value: "42", label: "Saídas realizadas" },
-  { value: "10", suffix: "–14", label: "Empresas por fundo" },
+  { value: "65", label: "Investimentos", variant: "dark" },
+  { value: "41", label: "Realizados", variant: "dark" },
+  { value: "4,7", suffix: "x", label: "MOIC", variant: "light" },
+  { value: "30,6", suffix: "%", label: "IRR", variant: "light" },
 ];
 
 export interface TeamMember { ini: string; name: string; role: string; li?: string; bio?: string; }
