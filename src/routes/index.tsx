@@ -4,10 +4,10 @@ import DGFWebsite from "@/components/DGFWebsite";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DGF Investimentos · 25 anos de Venture Capital" },
-      { name: "description", content: "DGF Investimentos: 25 anos investindo em software B2B na América Latina. Tese, portfólio e track record com disciplina e eficiência de capital." },
-      { property: "og:title", content: "DGF Investimentos · 25 anos" },
-      { property: "og:description", content: "Fundos passam. Firmas permanecem. Venture Capital com foco em software B2B desde 2001." },
+      { title: "DGF Investimentos · 25 years of Venture Capital" },
+      { name: "description", content: "DGF Investimentos: 25 years investing in B2B software in Latin America. Thesis, portfolio and track record with discipline and capital efficiency." },
+      { property: "og:title", content: "DGF Investimentos · 25 years" },
+      { property: "og:description", content: "Funds come and go. Firms endure. Venture Capital focused on B2B software since 2001." },
     ],
   }),
   component: Index,
