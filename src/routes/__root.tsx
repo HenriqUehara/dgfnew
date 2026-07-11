@@ -42,22 +42,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DGF Investimentos · 25 anos de Venture Capital" },
-      { name: "description", content: "DGF Investimentos: 25 anos investindo em software B2B na América Latina. Tese, portfólio e track record com disciplina e eficiência de capital." },
+      { title: "DGF Investimentos · 25 years of Venture Capital" },
+      { name: "description", content: "DGF Investimentos: 25 years investing in B2B software in Latin America. Thesis, portfolio and track record with discipline and capital efficiency." },
       { name: "author", content: "DGF Investimentos" },
       { name: "theme-color", content: "#0a1f15" },
       { property: "og:site_name", content: "DGF Investimentos" },
-      { property: "og:title", content: "DGF Investimentos · 25 anos" },
-      { property: "og:description", content: "Fundos passam. Firmas permanecem. Venture Capital com foco em software B2B desde 2001." },
+      { property: "og:title", content: "DGF Investimentos · 25 years" },
+      { property: "og:description", content: "Funds come and go. Firms endure. Venture Capital focused on B2B software since 2001." },
       { property: "og:type", content: "website" },
-      { property: "og:locale", content: "pt_BR" },
+      { property: "og:locale", content: "en_US" },
       { property: "og:url", content: SITE_URL },
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "DGF Investimentos · 25 anos" },
-      { name: "twitter:description", content: "Venture Capital com foco em software B2B desde 2001." },
+      { name: "twitter:title", content: "DGF Investimentos · 25 years" },
+      { name: "twitter:description", content: "Venture Capital focused on B2B software since 2001." },
       { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
@@ -68,7 +68,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "canonical", href: SITE_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" },
     ],
   }),
   shellComponent: RootShell,
@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <head><HeadContent /></head>
       <body>{children}<Scripts /></body>
     </html>
