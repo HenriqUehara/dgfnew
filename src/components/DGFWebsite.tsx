@@ -6,6 +6,7 @@ import {
   type CSSProperties,
   type ReactNode,
 } from "react";
+import { Link } from "@tanstack/react-router";
 import { Logo } from "./dgf/Logo";
 import { dgfStyles } from "./dgf/dgf-styles";
 import {
@@ -20,18 +21,14 @@ import {
 
 const YOUTUBE_ID = "4MkpwqORuBY";
 const CONTACT_EMAIL = "contato@dgf.com.br";
+const PREQIN_URL = "https://www.lavca.org/dgf-investimentos-receives-top-pe-vc-ranking/";
+const BLOOMBERG_URL = "https://www.bloomberglinea.com.br/startups/dgf-cresceu-com-apostas-em-software-no-brasil-agora-mira-oportunidade-maior-com-ia/";
 
 function scrollToId(id: string) {
   const el = document.getElementById(id);
   if (!el) return;
   const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
   el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-}
-
-function parseExitMultiple(exit?: string): number {
-  if (!exit || exit === "Realizada") return 0;
-  const n = parseFloat(exit.replace("~", "").replace(",", ".").replace("x", ""));
-  return Number.isNaN(n) ? 0 : n;
 }
 
 function Reveal({
@@ -133,15 +130,15 @@ export default function DGFWebsite() {
     filter === "all"
       ? companies.filter((c) => c.highlight)
       : filter === "saida"
-        ? companies.filter((c) => c.type === "saida").sort((a, b) => parseExitMultiple(b.exit) - parseExitMultiple(a.exit))
+        ? companies.filter((c) => c.type === "saida")
         : companies.filter((c) => c.type === "ativo");
 
   const othersCount = companies.filter((c) => c.type === "ativo" && !c.highlight).length;
 
   const filterOptions: { value: typeof filter; label: string; count: number }[] = [
-    { value: "all", label: "Todos", count: highlightCount },
-    { value: "ativo", label: "Ativos", count: activeCount },
-    { value: "saida", label: "Saídas", count: exitCount },
+    { value: "all", label: "All", count: highlightCount },
+    { value: "ativo", label: "Active", count: activeCount },
+    { value: "saida", label: "Exited", count: exitCount },
   ];
 
   return (
@@ -151,15 +148,11 @@ export default function DGFWebsite() {
         <style>{`.dgf-reveal{opacity:1 !important;transform:none !important;}`}</style>
       </noscript>
 
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" />
-
-      <a className="dgf-skip" href="#conteudo">Pular para o conteúdo</a>
+      <a className="dgf-skip" href="#conteudo">Skip to content</a>
       <div ref={sentinelRef} aria-hidden="true" style={{ position: "absolute", top: 0, height: 1, width: 1 }} />
 
-      <nav className={`dgf-nav${scrolled ? " dgf-nav--scrolled" : ""}`} aria-label="Principal">
-        <button className="dgf-brand" onClick={() => goTo("home")} aria-label="DGF Investimentos — início">
+      <nav className={`dgf-nav${scrolled ? " dgf-nav--scrolled" : ""}`} aria-label="Main">
+        <button className="dgf-brand" onClick={() => goTo("home")} aria-label="DGF Investimentos — home">
           <Logo variant="white" height={22} decorative />
         </button>
         <div className="dgf-nav__links">
@@ -174,10 +167,10 @@ export default function DGFWebsite() {
             </button>
           ))}
         </div>
-        <button className="dgf-cta dgf-nav__cta" onClick={() => goTo("contato")}>Fale com a gente →</button>
+        <button className="dgf-cta dgf-nav__cta" onClick={() => goTo("contato")}>Get in touch →</button>
         <button
           className="dgf-burger"
-          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           aria-controls="dgf-mobile-menu"
           onClick={() => setMenuOpen((o) => !o)}
@@ -193,7 +186,7 @@ export default function DGFWebsite() {
           {navLinks.map((l) => (
             <button key={l.id} className="dgf-mobilemenu__link" onClick={() => goTo(l.id)}>{l.label}</button>
           ))}
-          <button className="dgf-cta" onClick={() => goTo("contato")}>Fale com a gente →</button>
+          <button className="dgf-cta" onClick={() => goTo("contato")}>Get in touch →</button>
         </div>
       )}
 
@@ -202,20 +195,19 @@ export default function DGFWebsite() {
           <div className="dgf-blob dgf-hero__blob" aria-hidden="true" />
           <div className="dgf-badge">
             <span className="dgf-badge__dot dgf-glow" aria-hidden="true" />
-            <span style={{ letterSpacing: "0.04em" }}>25 anos · São Paulo</span>
+            <span style={{ letterSpacing: "0.04em" }}>25 years · São Paulo</span>
           </div>
           <h1 className="dgf-hero__title">
-            <span className="dim">Construímos</span> companhias
-            <br />
-            <span className="serif dgf-grad-text">resilientes</span>{" "}
-            <span className="dim">aos</span> ciclos <span className="dim">de</span> mercado.
+            <span className="dim">We back founders in</span> building companies{" "}
+            <span className="serif dgf-grad-text">resilient</span>{" "}
+            <span className="dim">across</span> market <span className="dim">cycles.</span>
           </h1>
           <p className="dgf-hero__sub">
-            Há mais de duas décadas moldando o ecossistema de Venture Capital na América Latina através de disciplina e eficiência de capital.
+            Shaping Latin America's venture capital ecosystem for over two decades through discipline and capital efficiency.
           </p>
           <div className="dgf-actions">
-            <button className="dgf-btn dgf-btn--primary" onClick={() => goTo("portfolio")}>Ver portfólio</button>
-            <button className="dgf-btn dgf-btn--ghost" onClick={() => goTo("sobre")}>Nossa história</button>
+            <button className="dgf-btn dgf-btn--primary" onClick={() => goTo("portfolio")}>View portfolio</button>
+            <button className="dgf-btn dgf-btn--ghost" onClick={() => goTo("sobre")}>Our story</button>
           </div>
           <dl className="dgf-hero__stats">
             {heroStats.map((s) => (
@@ -231,15 +223,15 @@ export default function DGFWebsite() {
           <div className="dgf-blob" aria-hidden="true" style={{ top: -120, left: "50%", transform: "translateX(-50%)", width: "min(700px, 90vw)", height: 350, background: "radial-gradient(ellipse, var(--green) 0%, transparent 70%)", opacity: 0.15, borderRadius: 0, filter: "blur(60px)" }} />
           <div className="dgf-container dgf-container--narrow">
             <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
-              <p className="dgf-eyebrow dgf-eyebrow--light">Vídeo Institucional</p>
-              <h2 className="dgf-h2"><span className="serif" style={{ color: "var(--green-accent)" }}>Nossa</span> história</h2>
-              <p className="dgf-lead" style={{ margin: "0 auto" }}>Conheça o DGF, nossa trajetória e como construímos companhias resilientes há mais de 25 anos.</p>
+              <p className="dgf-eyebrow dgf-eyebrow--light">Institutional Video</p>
+              <h2 className="dgf-h2"><span className="serif" style={{ color: "var(--green-accent)" }}>Our</span> story</h2>
+              <p className="dgf-lead" style={{ margin: "0 auto" }}>Get to know DGF, our journey and how we have built resilient companies for over 25 years.</p>
             </Reveal>
             <Reveal className="dgf-video__frame" delay={100}>
               {videoPlaying ? (
                 <iframe
                   src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
-                  title="Vídeo Institucional DGF"
+                  title="DGF Institutional Video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
@@ -247,7 +239,7 @@ export default function DGFWebsite() {
                 <button
                   className="dgf-video__facade"
                   onClick={() => setVideoPlaying(true)}
-                  aria-label="Reproduzir vídeo institucional do DGF"
+                  aria-label="Play DGF institutional video"
                   style={{
                     backgroundImage: `linear-gradient(rgba(6,18,12,0.35), rgba(6,18,12,0.55)), url(https://i.ytimg.com/vi/${YOUTUBE_ID}/maxresdefault.jpg)`,
                     backgroundSize: "cover",
@@ -264,13 +256,13 @@ export default function DGFWebsite() {
         <section id="sobre" className="dgf-section dgf-section--white">
           <div className="dgf-container dgf-about">
             <Reveal className="dgf-about__body">
-              <p className="dgf-eyebrow">Sobre a Gestora</p>
-              <h2 className="dgf-h2">Construída para durar.<br /><span className="serif" style={{ color: "var(--green)" }}>Orientada ao fundador.</span></h2>
-              <p>Fundado em 2001 por <strong>Sidney Chameh</strong>, o DGF atravessou ciclos econômicos, mudanças de mercado e evoluções de modelo.</p>
-              <p>Desde 2012, nossa tese é exclusivamente <strong>software B2B e modelos capital eficientes</strong>. É onde nosso conhecimento gera valor real para fundadores que constroem empresas duradouras.</p>
+              <p className="dgf-eyebrow">About the Firm</p>
+              <h2 className="dgf-h2">Built for the long term.<br /><span className="serif" style={{ color: "var(--green)" }}>Aligned with founders.</span></h2>
+              <p>Founded in 2001 by <strong>Sidney Chameh</strong>, DGF has weathered economic cycles, market shifts and model evolutions.</p>
+              <p>Since 2012, our thesis is exclusively <strong>B2B software and capital-efficient models</strong>. That is where our expertise generates real value for founders building enduring companies.</p>
               <blockquote className="dgf-quote">
-                <p className="serif">"Capturando alfa, e não apenas beta."</p>
-                <cite>Princípio de investimento DGF</cite>
+                <p className="serif">"Capturing alpha, not just beta."</p>
+                <cite>DGF investment principle</cite>
               </blockquote>
             </Reveal>
             <Reveal delay={150}>
@@ -280,16 +272,16 @@ export default function DGFWebsite() {
                   <div style={{ position: "relative" }}>
                     <div style={{ marginBottom: 20 }}><Logo variant="white" height={22} decorative /></div>
                     <div className="dgf-card-num">2001</div>
-                    <div className="dgf-card-label">Fundação em São Paulo</div>
+                    <div className="dgf-card-label">Founded in São Paulo</div>
                   </div>
                 </div>
                 <div className="dgf-card-stat">
                   <div className="dgf-card-num">8<span className="accent">°</span></div>
-                  <div className="dgf-card-label">Fundo atual</div>
+                  <div className="dgf-card-label">Current fund</div>
                 </div>
                 <div className="dgf-card-stat">
-                  <div className="dgf-card-num">34<span className="accent">x</span></div>
-                  <div className="dgf-card-label">RD Station</div>
+                  <div className="dgf-card-num">#1</div>
+                  <div className="dgf-card-label">Preqin — Emerging Markets</div>
                 </div>
               </div>
             </Reveal>
@@ -299,9 +291,9 @@ export default function DGFWebsite() {
         <section id="tese" className="dgf-section dgf-section--paper">
           <div className="dgf-container">
             <Reveal>
-              <p className="dgf-eyebrow">Tese de Investimento</p>
-              <h2 className="dgf-h2">O que <span className="serif" style={{ color: "var(--green)" }}>buscamos</span>.</h2>
-              <p className="dgf-lead" style={{ marginBottom: 48 }}>Modelos de negócio capital eficientes, com alta margem bruta, receita recorrente e fundadores que pensam em escala global desde o dia um.</p>
+              <p className="dgf-eyebrow">Investment Thesis</p>
+              <h2 className="dgf-h2">What we <span className="serif" style={{ color: "var(--green)" }}>look for</span>.</h2>
+              <p className="dgf-lead" style={{ marginBottom: 48 }}>Capital-efficient business models with high gross margins, recurring revenue and founders who think about global scale from day one.</p>
             </Reveal>
             <div className="dgf-grid-3">
               {thesis.map((t, i) => (
@@ -321,11 +313,11 @@ export default function DGFWebsite() {
           <div className="dgf-container">
             <div className="dgf-portfolio__head">
               <Reveal>
-                <p className="dgf-eyebrow dgf-eyebrow--light">Portfólio</p>
-                <h2 className="dgf-h2">Empresas em que <span className="serif" style={{ color: "var(--green-accent)" }}>acreditamos</span>.</h2>
-                <p className="dgf-lead">Portfólio concentrado. 10 a 14 empresas por fundo.</p>
+                <p className="dgf-eyebrow dgf-eyebrow--light">Portfolio</p>
+                <h2 className="dgf-h2">Companies we <span className="serif" style={{ color: "var(--green-accent)" }}>believe in</span>.</h2>
+                <p className="dgf-lead">Concentrated portfolio. 10 to 14 companies per fund.</p>
               </Reveal>
-              <div className="dgf-filters" role="group" aria-label="Filtrar portfólio">
+              <div className="dgf-filters" role="group" aria-label="Filter portfolio">
                 {filterOptions.map((o) => (
                   <button key={o.value} className="dgf-filter" aria-pressed={filter === o.value} onClick={() => setFilter(o.value)}>
                     {o.label}<span className="dgf-filter__count">{o.count}</span>
@@ -334,7 +326,7 @@ export default function DGFWebsite() {
               </div>
             </div>
             <div className="dgf-cards">
-              {filtered.length === 0 && <p className="dgf-empty">Nenhuma empresa neste filtro.</p>}
+              {filtered.length === 0 && <p className="dgf-empty">No companies in this filter.</p>}
               {filtered.map((c, i) => (
                 <Reveal key={c.id} delay={Math.min(i * 40, 320)}>
                   <article className="dgf-cocard">
@@ -344,10 +336,7 @@ export default function DGFWebsite() {
                       <div className="dgf-cocard__desc">{c.desc}</div>
                     </div>
                     <div className="dgf-cocard__foot">
-                      <span className={`dgf-tag ${c.type === "ativo" ? "dgf-tag--ativo" : "dgf-tag--saida"}`}>{c.type === "ativo" ? "Ativo" : "Saída"}</span>
-                      {c.type === "saida" && c.exit && (
-                        <span className={`dgf-exit${c.exit === "Realizada" ? " dgf-exit--plain" : ""}`}>{c.exit}</span>
-                      )}
+                      <span className={`dgf-tag ${c.type === "ativo" ? "dgf-tag--ativo" : "dgf-tag--saida"}`}>{c.type === "ativo" ? "Active" : "Exited"}</span>
                     </div>
                   </article>
                 </Reveal>
@@ -357,10 +346,10 @@ export default function DGFWebsite() {
                   <button className="dgf-cocard dgf-cocard--cta" onClick={() => setFilter("ativo")}>
                     <div className="dgf-cocard__badge" aria-hidden="true">+</div>
                     <div className="dgf-cocard__body">
-                      <div className="dgf-cocard__name">Outras investidas</div>
-                      <div className="dgf-cocard__desc">Mais {othersCount} empresas compõem o portfólio ativo do DGF.</div>
+                      <div className="dgf-cocard__name">Other portfolio companies</div>
+                      <div className="dgf-cocard__desc">Another {othersCount} companies make up DGF's active portfolio.</div>
                     </div>
-                    <div className="dgf-cocard__foot"><span className="dgf-tag dgf-tag--ativo">Ver todas →</span></div>
+                    <div className="dgf-cocard__foot"><span className="dgf-tag dgf-tag--ativo">View all →</span></div>
                   </button>
                 </Reveal>
               )}
@@ -372,8 +361,9 @@ export default function DGFWebsite() {
           <div className="dgf-container">
             <Reveal>
               <p className="dgf-eyebrow">Track Record</p>
-              <h2 className="dgf-h2">+25 anos de consistência<br />e <span className="serif" style={{ color: "var(--green)" }}>disciplina</span>.</h2>
-              <p className="dgf-lead" style={{ marginBottom: 48 }}>Entregando retornos de top-quartile ao longo dos ciclos.</p>
+              <h2 className="dgf-h2">25+ years of consistency<br />and <span className="serif" style={{ color: "var(--green)" }}>discipline</span>.</h2>
+              <p className="dgf-lead" style={{ marginBottom: 24 }}>Performance validated by the market. Discipline that delivers leadership-level returns.</p>
+              <p className="dgf-lead" style={{ marginBottom: 48 }}>We combine historical consistency and capital efficiency to position our funds among the top of Latin America's venture capital industry. With more than 25 years of experience, DGF was ranked by Preqin as the most consistent private capital manager in emerging markets, with a proven track record of top-quartile funds. We have navigated economic cycles delivering liquidity and solid returns to our investors, without ever losing alignment with founders.</p>
             </Reveal>
             <Reveal delay={100}>
               <div className="dgf-trackgrid">
@@ -390,10 +380,9 @@ export default function DGFWebsite() {
               </div>
             </Reveal>
             <Reveal delay={200}>
-              <div className="dgf-note">
-                <p style={{ marginBottom: 6 }}><strong style={{ color: "var(--text-soft)" }}>Investimentos:</strong> total dos fundos DGF Legacy ao DGF 7.</p>
-                <p style={{ marginBottom: 6 }}><strong style={{ color: "var(--text-soft)" }}>Realizados:</strong> investimentos com saída realizada nos fundos DGF Legacy ao DGF 7.</p>
-                <p style={{ marginBottom: 0 }}><strong style={{ color: "var(--text-soft)" }}>MOIC e IRR:</strong> realizações em companhias de tecnologia. Exclui seis companhias não-tech. Soma dos proventos e recebíveis dividida pelo capital investido nas companhias realizadas.</p>
+              <div className="dgf-sources">
+                <a className="dgf-source" href={PREQIN_URL} target="_blank" rel="noreferrer">Preqin ranking (LAVCA) ↗</a>
+                <a className="dgf-source" href={BLOOMBERG_URL} target="_blank" rel="noreferrer">Track record study — Bloomberg Línea ↗</a>
               </div>
             </Reveal>
           </div>
@@ -402,9 +391,9 @@ export default function DGFWebsite() {
         <section id="time" className="dgf-section dgf-section--white">
           <div className="dgf-container">
             <Reveal>
-              <p className="dgf-eyebrow">Time</p>
-              <h2 className="dgf-h2">Pessoas que <span className="serif" style={{ color: "var(--green)" }}>constroem</span> com fundadores.</h2>
-              <p className="dgf-lead" style={{ marginBottom: 48 }}>Mais do que capital, presença ativa no conselho: apoiamos empreendedores da tração à liderança, construindo resiliência nos momentos mais desafiadores.</p>
+              <p className="dgf-eyebrow">Team</p>
+              <h2 className="dgf-h2">People who <span className="serif" style={{ color: "var(--green)" }}>build</span> alongside founders.</h2>
+              <p className="dgf-lead" style={{ marginBottom: 48 }}>More than capital, active board presence: we support founders from traction to leadership, building resilience in the most challenging moments.</p>
             </Reveal>
             <div className="dgf-team">
               {team.map((p, i) => {
@@ -434,25 +423,26 @@ export default function DGFWebsite() {
         <section id="contato" className="dgf-section dgf-section--dark dgf-contact">
           <div className="dgf-blob dgf-contact__blob" aria-hidden="true" />
           <div className="dgf-container">
-            <p className="dgf-eyebrow dgf-eyebrow--light">Contato</p>
-            <h2 className="dgf-h2">Construindo algo relevante em <span className="serif" style={{ color: "var(--green-accent)" }}>software B2B</span>?</h2>
-            <p className="dgf-contact__sub">Converse com nosso time. Avaliamos todas as oportunidades e somos diretos sobre o que conseguimos contribuir.</p>
+            <p className="dgf-eyebrow dgf-eyebrow--light">Contact</p>
+            <h2 className="dgf-h2">Building something meaningful in <span className="serif" style={{ color: "var(--green-accent)" }}>B2B software</span>?</h2>
+            <p className="dgf-contact__sub">Talk to our team. We evaluate every opportunity and are direct about what we can contribute.</p>
             <div className="dgf-contact__actions">
-              <a className="dgf-btn dgf-btn--primary" href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Oportunidade de investimento — DGF")}`}>Envie seu deck</a>
-              <button className="dgf-btn dgf-btn--ghost" onClick={() => goTo("track")}>Ver track record →</button>
+              <a className="dgf-btn dgf-btn--primary" href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Investment opportunity — DGF")}`}>Send your deck</a>
+              <button className="dgf-btn dgf-btn--ghost" onClick={() => goTo("track")}>View track record →</button>
             </div>
-            <p className="dgf-contact__email">ou escreva para <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+            <p className="dgf-contact__email">or write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
           </div>
         </section>
       </main>
 
       <footer className="dgf-footer">
         <div style={{ opacity: 0.7 }}><Logo variant="white" height={22} decorative /></div>
-        <nav className="dgf-footer__links" aria-label="Rodapé">
-          <button className="dgf-footer__link" onClick={() => goTo("sobre")}>Sobre</button>
-          <button className="dgf-footer__link" onClick={() => goTo("portfolio")}>Portfólio</button>
-          <button className="dgf-footer__link" onClick={() => goTo("contato")}>Contato</button>
+        <nav className="dgf-footer__links" aria-label="Footer">
+          <button className="dgf-footer__link" onClick={() => goTo("sobre")}>About</button>
+          <button className="dgf-footer__link" onClick={() => goTo("portfolio")}>Portfolio</button>
+          <button className="dgf-footer__link" onClick={() => goTo("contato")}>Contact</button>
           <a className="dgf-footer__link" href="https://www.linkedin.com/company/dgf-investimentos" target="_blank" rel="noreferrer">LinkedIn</a>
+          <Link className="dgf-footer__link" to="/cvm-disclosures">CVM Disclosures</Link>
         </nav>
         <div className="dgf-footer__rule" aria-hidden="true" />
         <div className="dgf-footer__copy">© {new Date().getFullYear()} DGF Investimentos · São Paulo</div>
