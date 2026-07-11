@@ -9,8 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as CvmDisclosuresRouteImport } from './routes/cvm-disclosures'
 import { Route as IndexRouteImport } from './routes/index'
 
+const CvmDisclosuresRoute = CvmDisclosuresRouteImport.update({
+  id: '/cvm-disclosures',
+  path: '/cvm-disclosures',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +25,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cvm-disclosures': typeof CvmDisclosuresRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cvm-disclosures': typeof CvmDisclosuresRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cvm-disclosures': typeof CvmDisclosuresRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/cvm-disclosures'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/cvm-disclosures'
+  id: '__root__' | '/' | '/cvm-disclosures'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CvmDisclosuresRoute: typeof CvmDisclosuresRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/cvm-disclosures': {
+      id: '/cvm-disclosures'
+      path: '/cvm-disclosures'
+      fullPath: '/cvm-disclosures'
+      preLoaderRoute: typeof CvmDisclosuresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +70,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CvmDisclosuresRoute: CvmDisclosuresRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
