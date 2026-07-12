@@ -63,10 +63,10 @@ function CvmDisclosures() {
 
           <h2>Time</h2>
           <p>
-            O DGF conta com os sócios Sidney Chameh, Frederico Greve, Daniel Heise, Henrique Uehara e Henrique Ferreira, além de um time de associados e analistas, todos profissionais com grande experiência em investimentos em empresas de tecnologia.
+            O DGF conta com os sócios Sidney Chameh, Frederico Greve, Daniel Heise, Henrique Uehara, Henrique Ferreira, Daniel Menache e João Orem, além de um time de associados e analistas, todos profissionais com grande experiência em investimentos em empresas de tecnologia.
           </p>
 
-          <h2>Informações CVM</h2>
+          <h2>Documentos Obrigatórios</h2>
           <p>
             Os documentos obrigatórios estão disponibilizados abaixo, conforme RCVM 21/21. Os Fundos do DGF são destinados exclusivamente a investidores profissionais. Mais informações sobre os Fundos do DGF podem ser encontradas no site da CVM. Além disso, os Fundos do DGF são aderentes ao código de autorregulação ABVCAP / ANBIMA.
           </p>
