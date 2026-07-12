@@ -259,7 +259,8 @@ export default function DGFWebsite() {
               <p className="dgf-eyebrow">About the Firm</p>
               <h2 className="dgf-h2">Built for the long term.<br /><span className="serif" style={{ color: "var(--green)" }}>Aligned with founders.</span></h2>
               <p>Founded in 2001 by <strong>Sidney Chameh</strong>, DGF has weathered economic cycles, market shifts and model evolutions.</p>
-              <p>Since 2012, our thesis is exclusively <strong>B2B software and capital-efficient models</strong>. That is where our expertise generates real value for founders building enduring companies.</p>
+              <p>Since 2012, our thesis is exclusively <strong>B2B software and capital-efficient models</strong>. Today, we look for the next generation of B2B platforms, leveraging applied AI to automate complex workflows and capture unprecedented value.</p>
+              <p>That is where our expertise generates real value for founders building enduring companies.</p>
               <blockquote className="dgf-quote">
                 <p className="serif">"Capturing alpha, not just beta."</p>
                 <cite>DGF investment principle</cite>
