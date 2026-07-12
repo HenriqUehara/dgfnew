@@ -136,7 +136,7 @@ export default function DGFWebsite() {
   const othersCount = companies.filter((c) => c.type === "ativo" && !c.highlight).length;
 
   const filterOptions: { value: typeof filter; label: string; count: number }[] = [
-    { value: "all", label: "All", count: highlightCount },
+    { value: "all", label: "Selected Investments", count: highlightCount },
     { value: "ativo", label: "Active", count: activeCount },
     { value: "saida", label: "Exited", count: exitCount },
   ];
