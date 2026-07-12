@@ -76,10 +76,10 @@ export const companies: Company[] = [
 
 export interface Thesis { n: string; title: string; body: string; }
 export const thesis: Thesis[] = [
-  { n: "01", title: "B2B Software", body: "Exclusive focus since 2012. High margin, low marginal cost, pricing power." },
+  { n: "01", title: "B2B Software", body: "We back B2B software architectures (from classic SaaS to AI-native workflows) that deliver structural high margins and undeniable value." },
   { n: "02", title: "Recurring Revenue", body: "Predictable models that let us invest in product and distribution with conviction." },
   { n: "03", title: "Strong Unit Economics", body: "Sustainable growth with CAC/LTV that hold up under rigorous scrutiny." },
-  { n: "04", title: "Technical Teams", body: "Founders who understand the problem. Product and engineering as competitive advantage." },
+  { n: "04", title: "Technical Teams", body: "Founders who understand the problem. Product and engineering as competitive advantage. Founders who leverage modern technology stacks and applied AI to build proprietary data moats." },
   { n: "05", title: "Global Potential", body: "Brazil as a starting point, not a ceiling. Competing internationally from day one." },
   { n: "06", title: "Rigorous Process", body: "Proprietary methodology in pursuit of Investment Committee consensus. We lead US$1M–US$3M rounds with a board seat." },
 ];

@@ -20,7 +20,7 @@ import {
 } from "./dgf/data";
 
 const YOUTUBE_ID = "4MkpwqORuBY";
-const CONTACT_EMAIL = "contato@dgf.com.br";
+const CONTACT_EMAIL = "startups@dgf.com.br";
 const PREQIN_URL = "https://www.lavca.org/dgf-investimentos-receives-top-pe-vc-ranking/";
 const BLOOMBERG_URL = "https://www.bloomberglinea.com.br/startups/dgf-cresceu-com-apostas-em-software-no-brasil-agora-mira-oportunidade-maior-com-ia/";
 
@@ -136,7 +136,7 @@ export default function DGFWebsite() {
   const othersCount = companies.filter((c) => c.type === "ativo" && !c.highlight).length;
 
   const filterOptions: { value: typeof filter; label: string; count: number }[] = [
-    { value: "all", label: "All", count: highlightCount },
+    { value: "all", label: "Selected Investments", count: highlightCount },
     { value: "ativo", label: "Active", count: activeCount },
     { value: "saida", label: "Exited", count: exitCount },
   ];
@@ -259,7 +259,8 @@ export default function DGFWebsite() {
               <p className="dgf-eyebrow">About the Firm</p>
               <h2 className="dgf-h2">Built for the long term.<br /><span className="serif" style={{ color: "var(--green)" }}>Aligned with founders.</span></h2>
               <p>Founded in 2001 by <strong>Sidney Chameh</strong>, DGF has weathered economic cycles, market shifts and model evolutions.</p>
-              <p>Since 2012, our thesis is exclusively <strong>B2B software and capital-efficient models</strong>. That is where our expertise generates real value for founders building enduring companies.</p>
+              <p>Since 2012, our thesis is exclusively <strong>B2B software and capital-efficient models</strong>. Today, we look for the next generation of B2B platforms, leveraging applied AI to automate complex workflows and capture unprecedented value.</p>
+              <p>That is where our expertise generates real value for founders building enduring companies.</p>
               <blockquote className="dgf-quote">
                 <p className="serif">"Capturing alpha, not just beta."</p>
                 <cite>DGF investment principle</cite>
@@ -362,8 +363,8 @@ export default function DGFWebsite() {
             <Reveal>
               <p className="dgf-eyebrow">Track Record</p>
               <h2 className="dgf-h2">25+ years of consistency<br />and <span className="serif" style={{ color: "var(--green)" }}>discipline</span>.</h2>
-              <p className="dgf-lead" style={{ marginBottom: 24 }}>Performance validated by the market. Discipline that delivers leadership-level returns.</p>
-              <p className="dgf-lead" style={{ marginBottom: 48 }}>We combine historical consistency and capital efficiency to position our funds among the top of Latin America's venture capital industry. With more than 25 years of experience, DGF was ranked by Preqin as the most consistent private capital manager in emerging markets, with a proven track record of top-quartile funds. We have navigated economic cycles delivering liquidity and solid returns to our investors, without ever losing alignment with founders.</p>
+              <p className="dgf-lead" style={{ marginBottom: 24, maxWidth: "62ch", marginInline: "auto", textAlign: "center" }}>Performance validated by the market. Discipline that delivers leadership-level returns.</p>
+              <p className="dgf-lead" style={{ marginBottom: 48, maxWidth: "68ch", marginInline: "auto", textAlign: "center" }}>We combine historical consistency and capital efficiency to position our funds among the top of Latin America's venture capital industry. With more than 25 years of experience, DGF was ranked by Preqin as the most consistent private capital manager in emerging markets, with a proven track record of top-quartile funds. We have navigated economic cycles delivering liquidity and solid returns to our investors, without ever losing alignment with founders.</p>
             </Reveal>
             <Reveal delay={100}>
               <div className="dgf-trackgrid">
@@ -380,9 +381,9 @@ export default function DGFWebsite() {
               </div>
             </Reveal>
             <Reveal delay={200}>
-              <div className="dgf-sources">
+              <div className="dgf-sources" style={{ justifyContent: "center", textAlign: "center" }}>
+                <a className="dgf-source" href={BLOOMBERG_URL} target="_blank" rel="noreferrer">Track Record Study ↗</a>
                 <a className="dgf-source" href={PREQIN_URL} target="_blank" rel="noreferrer">Preqin ranking (LAVCA) ↗</a>
-                <a className="dgf-source" href={BLOOMBERG_URL} target="_blank" rel="noreferrer">Track record study — Bloomberg Línea ↗</a>
               </div>
             </Reveal>
           </div>
