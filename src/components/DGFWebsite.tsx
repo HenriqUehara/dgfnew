@@ -20,7 +20,7 @@ import {
 } from "./dgf/data";
 
 const YOUTUBE_ID = "4MkpwqORuBY";
-const CONTACT_EMAIL = "contato@dgf.com.br";
+const CONTACT_EMAIL = "startups@dgf.com.br";
 const PREQIN_URL = "https://www.lavca.org/dgf-investimentos-receives-top-pe-vc-ranking/";
 const BLOOMBERG_URL = "https://www.bloomberglinea.com.br/startups/dgf-cresceu-com-apostas-em-software-no-brasil-agora-mira-oportunidade-maior-com-ia/";
 
