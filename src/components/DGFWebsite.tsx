@@ -363,8 +363,8 @@ export default function DGFWebsite() {
             <Reveal>
               <p className="dgf-eyebrow">Track Record</p>
               <h2 className="dgf-h2">25+ years of consistency<br />and <span className="serif" style={{ color: "var(--green)" }}>discipline</span>.</h2>
-              <p className="dgf-lead" style={{ marginBottom: 24 }}>Performance validated by the market. Discipline that delivers leadership-level returns.</p>
-              <p className="dgf-lead" style={{ marginBottom: 48 }}>We combine historical consistency and capital efficiency to position our funds among the top of Latin America's venture capital industry. With more than 25 years of experience, DGF was ranked by Preqin as the most consistent private capital manager in emerging markets, with a proven track record of top-quartile funds. We have navigated economic cycles delivering liquidity and solid returns to our investors, without ever losing alignment with founders.</p>
+              <p className="dgf-lead" style={{ marginBottom: 24, maxWidth: "62ch", marginInline: "auto", textAlign: "center" }}>Performance validated by the market. Discipline that delivers leadership-level returns.</p>
+              <p className="dgf-lead" style={{ marginBottom: 48, maxWidth: "68ch", marginInline: "auto", textAlign: "center" }}>We combine historical consistency and capital efficiency to position our funds among the top of Latin America's venture capital industry. With more than 25 years of experience, DGF was ranked by Preqin as the most consistent private capital manager in emerging markets, with a proven track record of top-quartile funds. We have navigated economic cycles delivering liquidity and solid returns to our investors, without ever losing alignment with founders.</p>
             </Reveal>
             <Reveal delay={100}>
               <div className="dgf-trackgrid">
