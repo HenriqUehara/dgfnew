@@ -381,9 +381,9 @@ export default function DGFWebsite() {
               </div>
             </Reveal>
             <Reveal delay={200}>
-              <div className="dgf-sources">
+              <div className="dgf-sources" style={{ justifyContent: "center", textAlign: "center" }}>
+                <a className="dgf-source" href={BLOOMBERG_URL} target="_blank" rel="noreferrer">Track Record Study ↗</a>
                 <a className="dgf-source" href={PREQIN_URL} target="_blank" rel="noreferrer">Preqin ranking (LAVCA) ↗</a>
-                <a className="dgf-source" href={BLOOMBERG_URL} target="_blank" rel="noreferrer">Track record study — Bloomberg Línea ↗</a>
               </div>
             </Reveal>
           </div>
