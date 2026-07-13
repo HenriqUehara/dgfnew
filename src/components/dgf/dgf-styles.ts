@@ -33,6 +33,8 @@ html, body { overflow-x: hidden; max-width: 100%; }
 .dgf-sources { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 14px; }
 .dgf-source { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--green); text-decoration: none; padding: 10px 16px; border-radius: var(--r-pill); border: 1px solid var(--border); background: #fff; transition: border-color 0.2s var(--ease), transform 0.2s var(--ease), color 0.2s var(--ease); }
 .dgf-source:hover { border-color: var(--green-bright); color: var(--green-bright); transform: translateY(-1px); }
+.dgf-callout { margin-top: 8px; padding: 16px 20px; border-left: 3px solid var(--green); background: #fff; border-radius: var(--r-md); box-shadow: var(--shadow-card); }
+.dgf-callout strong { color: var(--dark); font-weight: 600; }
 .dgf-cvm { max-width: 900px; margin: 0 auto; padding: 120px 20px 80px; }
 .dgf-cvm h1 { font-size: var(--fs-h2); font-weight: 500; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px; color: var(--dark); }
 .dgf-cvm h2 { font-size: 1.5rem; font-weight: 500; letter-spacing: -0.02em; margin: 48px 0 16px; color: var(--dark); }
