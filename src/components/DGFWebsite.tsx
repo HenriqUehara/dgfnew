@@ -22,7 +22,7 @@ import {
 const YOUTUBE_ID = "4MkpwqORuBY";
 const CONTACT_EMAIL = "startups@dgf.com.br";
 const PREQIN_URL = "https://www.lavca.org/dgf-investimentos-receives-top-pe-vc-ranking/";
-const BLOOMBERG_URL = "https://www.bloomberglinea.com.br/startups/dgf-cresceu-com-apostas-em-software-no-brasil-agora-mira-oportunidade-maior-com-ia/";
+const STUDY_URL = "https://docsend.com/view/s/4q4d4sushrypmk9n";
 
 function scrollToId(id: string) {
   const el = document.getElementById(id);
@@ -383,7 +383,7 @@ export default function DGFWebsite() {
             </Reveal>
             <Reveal delay={200}>
               <div className="dgf-sources" style={{ justifyContent: "center", textAlign: "center" }}>
-                <a className="dgf-source" href={BLOOMBERG_URL} target="_blank" rel="noreferrer">Track Record Study ↗</a>
+                <a className="dgf-source" href={STUDY_URL} target="_blank" rel="noreferrer">Track Record Study ↗</a>
                 <a className="dgf-source" href={PREQIN_URL} target="_blank" rel="noreferrer">Preqin ranking (LAVCA) ↗</a>
               </div>
             </Reveal>
