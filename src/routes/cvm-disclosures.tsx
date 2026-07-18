@@ -36,7 +36,7 @@ function CvmDisclosures() {
 
       <nav className="dgf-nav dgf-nav--scrolled" aria-label="Main">
         <Link to="/" className="dgf-brand" aria-label="DGF Investimentos — home">
-          <Logo variant="white" height={22} decorative />
+          <Logo variant="white" height={28} decorative />
         </Link>
         <div className="dgf-nav__links">
           <Link to="/" className="dgf-navlink">Home</Link>
