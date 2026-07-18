@@ -19,8 +19,8 @@ import {
   type Company,
 } from "./dgf/data";
 
-const VIDEO_URL = "https://www.youtube.com/watch?v=4MkpwqORuBY";
-const LINKEDIN_URL = "https://www.linkedin.com/company/dgf-investimentos";
+const VIDEO_URL = "https://youtu.be/4MkpwqORuBY";
+const LINKEDIN_URL = "https://br.linkedin.com/company/dgf-investimentos";
 const CONTACT_EMAIL = "startups@dgf.com.br";
 const STUDY_URL = "https://docsend.com/view/s/4q4d4sushrypmk9n";
 
@@ -246,8 +246,8 @@ export default function DGFWebsite() {
             <Reveal className="dgf-about__body">
               <p className="dgf-eyebrow">About the Firm</p>
               <h2 className="dgf-h2">Built for the long term.<br /><span className="serif" style={{ color: "var(--green)" }}>Aligned with founders.</span></h2>
+              <p>Since 1998, our founding team has been investing in <strong>software and capital-efficient models</strong>. Today, we look for the next generation of B2B platforms, leveraging applied AI to automate complex workflows and capture unprecedented value.</p>
               <p>Founded in 2001, DGF has weathered economic cycles, market shifts and model evolutions.</p>
-              <p>Since 1998, our team has been investing in <strong>software and capital-efficient models</strong>. Today, we look for the next generation of B2B platforms, leveraging applied AI to automate complex workflows and capture unprecedented value.</p>
               <p>That is where our expertise generates real value for founders building enduring companies.</p>
               <div className="dgf-sources" style={{ marginTop: 28 }}>
                 <a className="dgf-source" href={VIDEO_URL} target="_blank" rel="noreferrer">Watch our institutional video ↗</a>
@@ -436,7 +436,7 @@ export default function DGFWebsite() {
           <button className="dgf-footer__link" onClick={() => goTo("sobre")}>About</button>
           <button className="dgf-footer__link" onClick={() => goTo("portfolio")}>Portfolio</button>
           <button className="dgf-footer__link" onClick={() => goTo("contato")}>Contact</button>
-          <a className="dgf-footer__link" href="https://www.linkedin.com/company/dgf-investimentos" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a className="dgf-footer__link" href={LINKEDIN_URL} target="_blank" rel="noreferrer">LinkedIn</a>
           <Link className="dgf-footer__link" to="/cvm-disclosures">CVM Disclosures</Link>
         </nav>
         <div className="dgf-footer__rule" aria-hidden="true" />
