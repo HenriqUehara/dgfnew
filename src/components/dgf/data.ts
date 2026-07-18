@@ -9,33 +9,34 @@ export interface Company {
   desc: string;
   type: CompanyStatus;
   highlight?: boolean;
+  site?: string;
 }
 
 export const companies: Company[] = [
-  { id: 1, ini: "TR", name: "Tractian", desc: "Industrial predictive maintenance with IoT and AI", type: "ativo", highlight: true },
-  { id: 2, ini: "SO", name: "Sólides", desc: "People management for SMBs", type: "ativo", highlight: true },
-  { id: 3, ini: "ME", name: "Memed", desc: "Digital prescription platform for physicians", type: "ativo", highlight: true },
-  { id: 4, ini: "IN", name: "InHire", desc: "Data-driven recruiting for mid-market companies", type: "ativo", highlight: true },
-  { id: 5, ini: "MG", name: "Maggu", desc: "Payments infrastructure for the digital economy", type: "ativo", highlight: true },
-  { id: 6, ini: "CS", name: "Cargo Sapiens", desc: "Logistics intelligence for the freight industry", type: "ativo", highlight: true },
-  { id: 7, ini: "MF", name: "Mudflap", desc: "Financial platform for truckers in the US", type: "ativo", highlight: true },
-  { id: 8, ini: "TK", name: "Takeat", desc: "Digital menu and payments for restaurants", type: "ativo", highlight: true },
-  { id: 9, ini: "D4", name: "Data4Sales", desc: "B2B commercial intelligence platform", type: "ativo", highlight: true },
-  { id: 10, ini: "RD", name: "RD Station", desc: "Digital marketing, acquired by TOTVS in 2020", type: "saida", highlight: true },
+  { id: 1, ini: "TR", name: "Tractian", desc: "Industrial predictive maintenance with IoT and AI", type: "ativo", highlight: true, site: "https://tractian.com" },
+  { id: 2, ini: "SO", name: "Sólides", desc: "People management for SMBs", type: "ativo", highlight: true, site: "https://solides.com.br" },
+  { id: 3, ini: "ME", name: "Memed", desc: "Digital prescription platform for physicians", type: "ativo", highlight: true, site: "https://memed.com.br" },
+  { id: 4, ini: "IN", name: "InHire", desc: "Data-driven recruiting for mid-market companies", type: "ativo", highlight: true, site: "https://inhire.com.br" },
+  { id: 5, ini: "MG", name: "Maggu", desc: "AI copilot for pharmacy retail", type: "ativo", highlight: true },
+  { id: 6, ini: "CS", name: "Cargo Sapiens", desc: "Logistics intelligence for the freight industry", type: "ativo", highlight: true, site: "https://cargosapiens.com" },
+  { id: 7, ini: "MF", name: "Mudflap", desc: "Financial platform for truckers in the US", type: "ativo", highlight: true, site: "https://www.mudflapinc.com" },
+  { id: 8, ini: "TK", name: "Takeat", desc: "Digital menu and payments for restaurants", type: "ativo", highlight: true, site: "https://www.takeat.app" },
+  { id: 9, ini: "D4", name: "Data4Sales", desc: "B2B commercial intelligence platform", type: "ativo", highlight: true, site: "https://en.data4sales.com" },
+  { id: 10, ini: "RD", name: "RD Station", desc: "Digital marketing, acquired by TOTVS in 2020", type: "saida", highlight: true, site: "https://www.rdstation.com" },
   { id: 11, ini: "DA", name: "Daitan", desc: "Software engineering, strategic exit", type: "saida", highlight: true },
-  { id: 12, ini: "MO", name: "Mosyle", desc: "Apple device management for enterprises", type: "saida", highlight: true },
-  { id: 13, ini: "SB", name: "SpeedBird", desc: "Aerial logistics operation with autonomous drones", type: "ativo" },
+  { id: 12, ini: "MO", name: "Mosyle", desc: "Apple device management for enterprises", type: "saida", highlight: true, site: "https://mosyle.com" },
+  { id: 13, ini: "SB", name: "SpeedBird", desc: "Aerial logistics operation with autonomous drones", type: "ativo", site: "https://www.speedbird.aero" },
   { id: 14, ini: "F1", name: "Frota 162", desc: "Fleet management and corporate mobility", type: "ativo" },
-  { id: 15, ini: "KY", name: "Kyte", desc: "Management system for small merchants", type: "ativo" },
-  { id: 16, ini: "TS", name: "Triple Session", desc: "Training and analytics for sales teams", type: "ativo" },
-  { id: 17, ini: "AR", name: "Aravita", desc: "Produce supply for food service", type: "ativo" },
-  { id: 18, ini: "SS", name: "Safespace", desc: "Whistleblowing channel and corporate compliance", type: "ativo" },
+  { id: 15, ini: "KY", name: "Kyte", desc: "Management system for small merchants", type: "ativo", site: "https://www.kyteapp.com" },
+  { id: 16, ini: "TS", name: "Triple Session", desc: "Training and analytics for sales teams", type: "ativo", site: "https://triplesession.com" },
+  { id: 17, ini: "AR", name: "Aravita", desc: "Produce supply for food service", type: "ativo", site: "https://aravita.com.br" },
+  { id: 18, ini: "SS", name: "Safespace", desc: "Whistleblowing channel and corporate compliance", type: "ativo", site: "https://safe.space" },
   { id: 19, ini: "GP", name: "Greenplat", desc: "Environmental traceability for the supply chain", type: "ativo" },
-  { id: 20, ini: "SL", name: "Slang", desc: "AI-driven corporate English training", type: "ativo" },
-  { id: 21, ini: "BD", name: "Birdie", desc: "Market intelligence from product reviews", type: "ativo" },
+  { id: 20, ini: "SL", name: "Slang", desc: "AI-driven corporate English training", type: "ativo", site: "https://slangapp.com" },
+  { id: 21, ini: "BD", name: "Birdie", desc: "Market intelligence from product reviews", type: "ativo", site: "https://birdie.ai" },
   { id: 22, ini: "TA", name: "TripAround", desc: "Smart corporate travel platform", type: "ativo" },
-  { id: 23, ini: "RC", name: "Rocket.Chat", desc: "Secure open source enterprise communication", type: "ativo" },
-  { id: 24, ini: "EM", name: "Mercado Eletrônico", desc: "B2B marketplace and corporate procurement", type: "ativo" },
+  { id: 23, ini: "RC", name: "Rocket.Chat", desc: "Secure open source enterprise communication", type: "ativo", site: "https://rocket.chat" },
+  { id: 24, ini: "EM", name: "Mercado Eletrônico", desc: "B2B marketplace and corporate procurement", type: "ativo", site: "https://www.me.com.br" },
   { id: 25, ini: "LG", name: "Logocenter", desc: "ERP that originated TOTVS", type: "saida", highlight: true },
   { id: 26, ini: "BU", name: "Buddemeyer", desc: "Traditional textile industry, modernization and market expansion", type: "saida" },
   { id: 27, ini: "PX", name: "Pollux", desc: "Industrial automation and robotics for manufacturing", type: "saida" },
@@ -67,7 +68,7 @@ export const companies: Company[] = [
   { id: 53, ini: "IG", name: "Ingresse", desc: "Event ticketing platform", type: "saida" },
   { id: 54, ini: "GF", name: "Geofusion", desc: "Geographic intelligence for retail and expansion", type: "saida" },
   { id: 55, ini: "WR", name: "Webradar", desc: "Monitoring and analytics for telecommunications", type: "saida" },
-  { id: 56, ini: "RA", name: "Reclame Aqui", desc: "Consumer reputation and relationship platform", type: "saida" },
+  { id: 56, ini: "RA", name: "Reclame Aqui", desc: "Consumer reputation and relationship platform", type: "saida", site: "https://reclameaqui.com.br" },
   { id: 57, ini: "SG", name: "Stilingue", desc: "Social media data intelligence", type: "saida" },
   { id: 58, ini: "DW", name: "Drumwave", desc: "Consumer data management and monetization", type: "saida" },
   { id: 59, ini: "AT", name: "Adianta", desc: "Receivables advance and credit for SMBs", type: "saida" },
@@ -96,10 +97,10 @@ export const heroStats: Stat[] = [
   { value: "42", label: "Exits" },
 ];
 export const trackStats: Stat[] = [
-  { value: "#1", label: "Preqin — Emerging Markets", variant: "dark" },
   { value: "25", suffix: "+", label: "Years operating", variant: "dark" },
-  { value: "Top Quartile", label: "Fund performance", variant: "light" },
-  { value: "8", label: "Funds raised", variant: "light" },
+  { value: "8", label: "Funds raised", variant: "dark" },
+  { value: "Top Quartile", label: "vs. global benchmarks", variant: "light" },
+  { value: "42", label: "Realized investments", variant: "light" },
 ];
 
 export interface TeamMember { ini: string; name: string; role: string; li?: string; bio?: string; }

@@ -89,7 +89,7 @@ html, body { overflow-x: hidden; max-width: 100%; }
 .dgf-badge__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green-accent); flex-shrink: 0; }
 .dgf-glow { animation: dgf-glow 2.5s infinite; }
 @keyframes dgf-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(60,171,110,0.4); } 50% { box-shadow: 0 0 0 8px rgba(60,171,110,0); } }
-.dgf-hero__title { font-size: var(--fs-hero); font-weight: 600; line-height: 1.02; letter-spacing: -0.035em; color: #fff; max-width: 15ch; margin-bottom: 28px; }
+.dgf-hero__title { font-size: var(--fs-hero); font-weight: 600; line-height: 1.02; letter-spacing: -0.035em; color: #fff; max-width: 20ch; margin-bottom: 28px; }
 .dgf-hero__title .dim { color: var(--on-dark-3); font-weight: 300; }
 .dgf-grad-text { background: linear-gradient(105deg, var(--green-accent) 0%, var(--mint) 55%, #fff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; padding-right: 0.08em; }
 .dgf-hero__sub { font-size: var(--fs-lead); color: var(--on-dark-2); max-width: 52ch; line-height: 1.65; margin-bottom: 40px; }
@@ -144,6 +144,9 @@ a.dgf-cocard { text-decoration: none; color: inherit; }
 .dgf-cocard:hover { border-color: var(--green-bright); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(29,118,72,0.18); }
 .dgf-cocard__badge { width: 46px; height: 46px; border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; color: #fff; letter-spacing: -0.02em; background: linear-gradient(135deg, var(--green), var(--green-bright)); }
 .dgf-cocard__badge--exit { background: rgba(255,255,255,0.08); }
+.dgf-cocard__badge--img { background: #fff; padding: 7px; border: 1px solid rgba(255,255,255,0.12); }
+.dgf-cocard__badge--img img { width: 100%; height: 100%; object-fit: contain; filter: grayscale(1); transition: filter 0.25s var(--ease); }
+.dgf-cocard:hover .dgf-cocard__badge--img img { filter: none; }
 .dgf-cocard__body { flex: 1; }
 .dgf-cocard__name { font-size: 15.5px; font-weight: 500; color: #fff; margin-bottom: 6px; letter-spacing: -0.01em; }
 .dgf-cocard__desc { font-size: 13px; color: var(--on-dark-3); line-height: 1.55; }
