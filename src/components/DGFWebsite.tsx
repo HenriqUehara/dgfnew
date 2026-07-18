@@ -19,9 +19,9 @@ import {
   type Company,
 } from "./dgf/data";
 
-const YOUTUBE_ID = "4MkpwqORuBY";
+const VIDEO_URL = "https://www.youtube.com/watch?v=4MkpwqORuBY";
+const LINKEDIN_URL = "https://www.linkedin.com/company/dgf-investimentos";
 const CONTACT_EMAIL = "startups@dgf.com.br";
-const PREQIN_URL = "https://www.lavca.org/dgf-investimentos-receives-top-pe-vc-ranking/";
 const STUDY_URL = "https://docsend.com/view/s/4q4d4sushrypmk9n";
 
 function scrollToId(id: string) {
@@ -76,12 +76,34 @@ function Reveal({
   );
 }
 
+function CompanyBadge({ company }: { company: Company }) {
+  const [failed, setFailed] = useState(false);
+  const domain = company.site ? company.site.replace(/^https?:\/\//, "").replace(/\/.*$/, "") : null;
+  const showImg = Boolean(domain) && !failed;
+  return (
+    <div
+      className={`dgf-cocard__badge${company.type === "saida" ? " dgf-cocard__badge--exit" : ""}${showImg ? " dgf-cocard__badge--img" : ""}`}
+      aria-hidden="true"
+    >
+      {showImg ? (
+        <img
+          src={`https://www.google.com/s2/favicons?domain=${domain}&sz=128`}
+          alt=""
+          loading="lazy"
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        company.ini
+      )}
+    </div>
+  );
+}
+
 export default function DGFWebsite() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [filter, setFilter] = useState<"all" | "ativo" | "saida">("all");
   const [activeSection, setActiveSection] = useState("home");
-  const [videoPlaying, setVideoPlaying] = useState(false);
 
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
@@ -138,7 +160,7 @@ export default function DGFWebsite() {
   const filterOptions: { value: typeof filter; label: string; count: number }[] = [
     { value: "all", label: "Selected Investments", count: highlightCount },
     { value: "ativo", label: "Active", count: activeCount },
-    { value: "saida", label: "Exited", count: exitCount },
+    { value: "saida", label: "Realized", count: exitCount },
   ];
 
   return (
@@ -153,7 +175,7 @@ export default function DGFWebsite() {
 
       <nav className={`dgf-nav${scrolled ? " dgf-nav--scrolled" : ""}`} aria-label="Main">
         <button className="dgf-brand" onClick={() => goTo("home")} aria-label="DGF Investimentos — home">
-          <Logo variant="white" height={22} decorative />
+          <Logo variant="white" height={28} decorative />
         </button>
         <div className="dgf-nav__links">
           {navLinks.map((l) => (
@@ -198,12 +220,12 @@ export default function DGFWebsite() {
             <span style={{ letterSpacing: "0.04em" }}>25 years · São Paulo</span>
           </div>
           <h1 className="dgf-hero__title">
-            <span className="dim">We back founders in</span> building companies{" "}
-            <span className="serif dgf-grad-text">resilient</span>{" "}
-            <span className="dim">across</span> market <span className="dim">cycles.</span>
+            <span className="dim">Three decades of</span> Venture Capital experience{" "}
+            <span className="dim">through</span> process, discipline{" "}
+            <span className="dim">and</span> <span className="serif dgf-grad-text">resilience</span>.
           </h1>
           <p className="dgf-hero__sub">
-            Shaping Latin America's venture capital ecosystem for over two decades through discipline and capital efficiency.
+            Backing early-stage software founders for over two decades, with returns benchmarked against global venture capital.
           </p>
           <div className="dgf-actions">
             <button className="dgf-btn dgf-btn--primary" onClick={() => goTo("portfolio")}>View portfolio</button>
@@ -219,52 +241,18 @@ export default function DGFWebsite() {
           </dl>
         </section>
 
-        <section id="video" className="dgf-section dgf-section--dark">
-          <div className="dgf-blob" aria-hidden="true" style={{ top: -120, left: "50%", transform: "translateX(-50%)", width: "min(700px, 90vw)", height: 350, background: "radial-gradient(ellipse, var(--green) 0%, transparent 70%)", opacity: 0.15, borderRadius: 0, filter: "blur(60px)" }} />
-          <div className="dgf-container dgf-container--narrow">
-            <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
-              <p className="dgf-eyebrow dgf-eyebrow--light">Institutional Video</p>
-              <h2 className="dgf-h2"><span className="serif" style={{ color: "var(--green-accent)" }}>Our</span> story</h2>
-              <p className="dgf-lead" style={{ margin: "0 auto" }}>Get to know DGF, our journey and how we have built resilient companies for over 25 years.</p>
-            </Reveal>
-            <Reveal className="dgf-video__frame" delay={100}>
-              {videoPlaying ? (
-                <iframe
-                  src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
-                  title="DGF Institutional Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              ) : (
-                <button
-                  className="dgf-video__facade"
-                  onClick={() => setVideoPlaying(true)}
-                  aria-label="Play DGF institutional video"
-                  style={{
-                    backgroundImage: `linear-gradient(rgba(6,18,12,0.35), rgba(6,18,12,0.55)), url(https://i.ytimg.com/vi/${YOUTUBE_ID}/maxresdefault.jpg)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <span className="dgf-video__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg></span>
-                </button>
-              )}
-            </Reveal>
-          </div>
-        </section>
-
         <section id="sobre" className="dgf-section dgf-section--white">
           <div className="dgf-container dgf-about">
             <Reveal className="dgf-about__body">
               <p className="dgf-eyebrow">About the Firm</p>
               <h2 className="dgf-h2">Built for the long term.<br /><span className="serif" style={{ color: "var(--green)" }}>Aligned with founders.</span></h2>
-              <p>Founded in 2001 by <strong>Sidney Chameh</strong>, DGF has weathered economic cycles, market shifts and model evolutions.</p>
-              <p>Since 2012, our thesis is exclusively <strong>B2B software and capital-efficient models</strong>. Today, we look for the next generation of B2B platforms, leveraging applied AI to automate complex workflows and capture unprecedented value.</p>
+              <p>Founded in 2001, DGF has weathered economic cycles, market shifts and model evolutions.</p>
+              <p>Since 1998, our team has been investing in <strong>software and capital-efficient models</strong>. Today, we look for the next generation of B2B platforms, leveraging applied AI to automate complex workflows and capture unprecedented value.</p>
               <p>That is where our expertise generates real value for founders building enduring companies.</p>
-              <blockquote className="dgf-quote">
-                <p className="serif">"Capturing alpha, not just beta."</p>
-                <cite>DGF investment principle</cite>
-              </blockquote>
+              <div className="dgf-sources" style={{ marginTop: 28 }}>
+                <a className="dgf-source" href={VIDEO_URL} target="_blank" rel="noreferrer">Watch our institutional video ↗</a>
+                <a className="dgf-source" href={LINKEDIN_URL} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+              </div>
             </Reveal>
             <Reveal delay={150}>
               <div className="dgf-about__cards">
@@ -281,8 +269,8 @@ export default function DGFWebsite() {
                   <div className="dgf-card-label">Current fund</div>
                 </div>
                 <div className="dgf-card-stat">
-                  <div className="dgf-card-num">#1</div>
-                  <div className="dgf-card-label">Preqin — Emerging Markets</div>
+                  <div className="dgf-card-num">US$1–3M</div>
+                  <div className="dgf-card-label">Initial check size</div>
                 </div>
               </div>
             </Reveal>
@@ -328,20 +316,26 @@ export default function DGFWebsite() {
             </div>
             <div className="dgf-cards">
               {filtered.length === 0 && <p className="dgf-empty">No companies in this filter.</p>}
-              {filtered.map((c, i) => (
-                <Reveal key={c.id} delay={Math.min(i * 40, 320)}>
-                  <article className="dgf-cocard">
-                    <div className={`dgf-cocard__badge${c.type === "saida" ? " dgf-cocard__badge--exit" : ""}`} aria-hidden="true">{c.ini}</div>
-                    <div className="dgf-cocard__body">
-                      <div className="dgf-cocard__name">{c.name}</div>
-                      <div className="dgf-cocard__desc">{c.desc}</div>
-                    </div>
-                    <div className="dgf-cocard__foot">
-                      <span className={`dgf-tag ${c.type === "ativo" ? "dgf-tag--ativo" : "dgf-tag--saida"}`}>{c.type === "ativo" ? "Active" : "Exited"}</span>
-                    </div>
-                  </article>
-                </Reveal>
-              ))}
+              {filtered.map((c, i) => {
+                const CardTag = c.site ? "a" : "article";
+                return (
+                  <Reveal key={c.id} delay={Math.min(i * 40, 320)}>
+                    <CardTag
+                      className="dgf-cocard"
+                      {...(c.site ? { href: c.site, target: "_blank", rel: "noreferrer" } : {})}
+                    >
+                      <CompanyBadge company={c} />
+                      <div className="dgf-cocard__body">
+                        <div className="dgf-cocard__name">{c.name}</div>
+                        <div className="dgf-cocard__desc">{c.desc}</div>
+                      </div>
+                      <div className="dgf-cocard__foot">
+                        <span className={`dgf-tag ${c.type === "ativo" ? "dgf-tag--ativo" : "dgf-tag--saida"}`}>{c.type === "ativo" ? "Active" : "Realized"}</span>
+                      </div>
+                    </CardTag>
+                  </Reveal>
+                );
+              })}
               {filter === "all" && (
                 <Reveal delay={Math.min(filtered.length * 40, 320)}>
                   <button className="dgf-cocard dgf-cocard--cta" onClick={() => setFilter("ativo")}>
@@ -364,7 +358,7 @@ export default function DGFWebsite() {
               <p className="dgf-eyebrow">Track Record</p>
               <h2 className="dgf-h2">25+ years of consistency<br />and <span className="serif" style={{ color: "var(--green)" }}>discipline</span>.</h2>
               <p className="dgf-lead" style={{ marginBottom: 24 }}>Performance validated by the market. Discipline that delivers leadership-level returns.</p>
-              <p className="dgf-lead" style={{ marginBottom: 20 }}>We combine historical consistency and capital efficiency to position our funds among the top of Latin America's venture capital industry. With more than 25 years of experience, DGF was ranked by Preqin as the most consistent private capital manager in emerging markets, with a proven track record of top-quartile funds.</p>
+              <p className="dgf-lead" style={{ marginBottom: 20 }}>We combine historical consistency and capital efficiency to position our funds among the top of the global venture capital industry, with a proven track record of top-quartile funds.</p>
               <p className="dgf-lead dgf-callout" style={{ marginBottom: 48 }}>We have navigated <strong>economic cycles</strong>, delivering <strong>liquidity and solid returns</strong> to our investors, without ever losing <strong>alignment with founders</strong>.</p>
             </Reveal>
             <Reveal delay={100}>
@@ -384,7 +378,6 @@ export default function DGFWebsite() {
             <Reveal delay={200}>
               <div className="dgf-sources" style={{ justifyContent: "center", textAlign: "center" }}>
                 <a className="dgf-source" href={STUDY_URL} target="_blank" rel="noreferrer">Track Record Study ↗</a>
-                <a className="dgf-source" href={PREQIN_URL} target="_blank" rel="noreferrer">Preqin ranking (LAVCA) ↗</a>
               </div>
             </Reveal>
           </div>
@@ -427,7 +420,7 @@ export default function DGFWebsite() {
           <div className="dgf-container">
             <p className="dgf-eyebrow dgf-eyebrow--light">Contact</p>
             <h2 className="dgf-h2">Building something meaningful in <span className="serif" style={{ color: "var(--green-accent)" }}>B2B software</span>?</h2>
-            <p className="dgf-contact__sub">Talk to our team. We evaluate every opportunity and are direct about what we can contribute.</p>
+            <p className="dgf-contact__sub">Send us a summary of your company. If it fits our investment criteria, we will reach out to you.</p>
             <div className="dgf-contact__actions">
               <a className="dgf-btn dgf-btn--primary" href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Investment opportunity — DGF")}`}>Send your deck</a>
               <button className="dgf-btn dgf-btn--ghost" onClick={() => goTo("track")}>View track record →</button>
